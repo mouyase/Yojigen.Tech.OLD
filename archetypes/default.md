@@ -8,9 +8,9 @@ description: ""
 featuredImage: ""
 featuredImagePreview: ""
 categories: 
-  - 其他
+  - 原创
 tags: 
-  - 其他
+  - 原创
 ---
 
 <!--more-->

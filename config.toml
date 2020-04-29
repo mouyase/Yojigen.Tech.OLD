@@ -546,7 +546,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 [author]
   name = "某亚瑟"
   email = "i@yojigen.tech"
-  link = "/"
+  link = "/about/"
 
 # 网站地图配置
 [sitemap]
