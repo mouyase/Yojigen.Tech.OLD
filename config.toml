@@ -96,7 +96,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   gitRepo = ""
   #  哪种哈希函数用来 SRI, 为空时表示不使用 SRI
   # ("sha256", "sha384", "sha512", "md5")
-  fingerprint = "sha512"
+  fingerprint = "sha256"
   #  日期格式
   dateFormat = "2006-01-02"
 
