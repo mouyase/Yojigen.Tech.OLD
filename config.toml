@@ -144,7 +144,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   [params.footer]
     enable = true
     #  自定义内容 (支持 HTML 格式)
-    custom = ''
+    custom = '<a href="https://www.mokeyjay.com">超能小紫</a> | <a href="https://www.himiku.com/">初之音</a>'
     #  是否显示 Hugo 和主题信息
     hugo = true
     #  是否显示版权信息
@@ -333,7 +333,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
       Twitter = true
       Facebook = true
       Linkedin = false
-      Whatsapp = true
+      Whatsapp = false
       Pinterest = false
       Tumblr = false
       HackerNews = false
@@ -349,8 +349,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
       Flipboard = false
       Weibo = true
       Renren = false
-      Myspace = true
-      Blogger = true
+      Myspace = false
+      Blogger = false
       Baidu = false
       Odnoklassniki = false
       Evernote = true
