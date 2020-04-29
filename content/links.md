@@ -1,5 +1,6 @@
 ---
 title: "友情链接"
+subtitle: ""
 date: 2015-04-01T00:00:00+08:00
 lastmod: 2015-04-01T00:00:00+08:00
 draft: false
@@ -12,19 +13,36 @@ tags:
 
 categories: 
 
-hiddenFromHomePage: false
-
 featuredImage: ""
 featuredImagePreview: ""
 
-toc: true
-autoCollapseToc: true
-math: true
+hiddenFromHomePage: false
+hiddenFromSearch: false
+twemoji: false
 lightgallery: true
+ruby: true
+fraction: true
+fontawesome: true
 linkToMarkdown: true
+
+toc:
+  enable: true
+  auto: true
+code:
+  copy: true
+  # ...
+math:
+  enable: true
+  # ...
+mapbox:
+  accessToken: ""
+  # ...
 share:
   enable: true
-comment: true
+  # ...
+comment:
+  enable: true
+  # ...
 ---
 
 <!--more-->
