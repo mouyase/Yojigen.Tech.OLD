@@ -439,7 +439,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 
   #  网站分析配置
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
       id = ""
