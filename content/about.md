@@ -4,26 +4,15 @@ subtitle: ""
 date: 2015-04-01T00:00:00+08:00
 lastmod: 2015-04-01T00:00:00+08:00
 draft: false
-author: "某亚瑟"
-authorLink: ""
 description: ""
-license: ""
 
 tags: 
 
 categories: 
-
 featuredImage: ""
 featuredImagePreview: ""
 
-hiddenFromHomePage: false
-hiddenFromSearch: false
-twemoji: false
-lightgallery: true
-ruby: true
-fraction: true
-fontawesome: true
-linkToMarkdown: true
+
 
 
 ---
