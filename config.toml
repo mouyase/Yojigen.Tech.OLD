@@ -477,8 +477,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
     #  twemoji@12.1.5
     twemojiJS = 'https://cdn.bootcdn.net/ajax/libs/twemoji/12.0.4/twemoji.min.js'
     # lightgallery.js@1.1.3 lg-thumbnail@1.1.0 lg-zoom@1.1.0
-    lightgalleryCSS = 'https://cdn.bootcdn.net/ajax/libs/lightgallery/1.6.14/js/lightgallery-all.min.js'
-    lightgalleryJS = 'https://cdn.bootcdn.net/ajax/libs/lightgallery/1.6.14/js/lightgallery.min.js'
+    lightgalleryCSS = 'https://cdn.bootcdn.net/ajax/libs/lightgallery/1.1.3/css/lightGallery.css'
+    lightgalleryJS = 'https://cdn.bootcdn.net/ajax/libs/lightgallery/1.1.3/js/lightGallery.min.js'
     lightgalleryThumbnailJS = 'https://cdn.bootcdn.net/ajax/libs/lg-thumbnail/1.1.0/lg-thumbnail.min.js'
     lightgalleryZoomJS = 'https://cdn.bootcdn.net/ajax/libs/lg-zoom/1.1.0/lg-zoom.min.js'
     #  clipboard.js@2.0.6
