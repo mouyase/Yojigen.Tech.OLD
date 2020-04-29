@@ -23,203 +23,71 @@ enableGitInfo = false
 # 是否使用 emoji 代码
 enableEmoji = true
 
-[languages]
-  [languages.zh-cn]
+# 是否包括中日韩文字
+hasCJKLanguage = true
+# 默认每页列表显示的文章数目
+paginate = 10
+# [UA-XXXXXXXX-X] 谷歌分析代号
+googleAnalytics = "UA-99576518-1"
+# 版权描述，仅仅用于 SEO
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+# 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = ""
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = ""
+    name = "所有文章"
+    url = "/posts/"
+    title = ""
     weight = 1
-    # 网站语言, 仅在这里 CN 大写
-    languageCode = "zh-CN"
-    # 语言名称
-    languageName = "简体中文"
-    # 是否包括中日韩文字
-    hasCJKLanguage = true
-    # 默认每页列表显示的文章数目
-    paginate = 12
-    # [UA-XXXXXXXX-X] 谷歌分析代号
-    googleAnalytics = ""
-    # 版权描述，仅仅用于 SEO
-    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-    # 菜单配置
-    [languages.zh-cn.menu]
-      [[languages.zh-cn.menu.main]]
-        identifier = "posts"
-        # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-        pre = ""
-        # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
-        post = ""
-        name = "所有文章"
-        url = "/posts/"
-        title = ""
-        weight = 1
-      [[languages.zh-cn.menu.main]]
-        identifier = "tags"
-        pre = ""
-        post = ""
-        name = "标签"
-        url = "/tags/"
-        title = ""
-        weight = 2
-      [[languages.zh-cn.menu.main]]
-        identifier = "categories"
-        pre = ""
-        post = ""
-        name = "分类"
-        url = "/categories/"
-        title = ""
-        weight = 3
-      [[languages.zh-cn.menu.main]]
-        identifier = "documentation"
-        pre = ""
-        name = "文档"
-        url = "/categories/documentation/"
-        title = ""
-        weight = 4
-      [[languages.zh-cn.menu.main]]
-        identifier = "about"
-        pre = ""
-        post = ""
-        name = "关于"
-        url = "/about/"
-        title = ""
-        weight = 5
-      [[languages.zh-cn.menu.main]]
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
-        name = ""
-        url = "https://github.com/dillonzq/LoveIt"
-        title = "GitHub"
-        weight = 6
-    [languages.zh-cn.params]
-      # 网站描述
-      description = "关于 LoveIt 主题"
-      # 网站关键词
-      keywords = ["Theme", "Hugo"]
-      # 应用图标配置
-      [languages.zh-cn.params.app]
-        # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-        title = "LoveIt"
-        # 是否隐藏网站图标资源链接
-        noFavicon = false
-        # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
-        svgFavicon = ""
-        # Android 浏览器主题色
-        themeColor = "#ffffff"
-        # Safari 图标颜色
-        iconColor = "#5bbad5"
-        # Windows v8-10 磁贴颜色
-        tileColor = "#da532c"
-      # 搜索配置
-      [languages.zh-cn.params.search]
-        enable = true
-        # 搜索引擎的类型 ("lunr", "algolia")
-        type = "algolia"
-        # 文章内容最长索引长度
-        contentLength = 5000
-        # 搜索框的占位提示语
-        placeholder = ""
-        # 最大结果数目
-        maxResultLength = 10
-        # 搜索结果中高亮部分的 HTML 标签
-        highlightTag = "em"
-        [languages.zh-cn.params.search.algolia]
-          index = "index.zh-cn"
-          appID = "PASDMWALPK"
-          searchKey = "b42948e51daaa93df92381c8e2ac0f93"
-      # 主页信息设置
-      [languages.zh-cn.params.home]
-        # RSS 文章数目
-        rss = 10
-        # 主页个人信息
-        [languages.zh-cn.params.home.profile]
-          enable = true
-          # Gravatar 邮箱，用于优先在主页显示的头像
-          gravatarEmail = ""
-          # 主页显示头像的 URL
-          avatarURL = "/images/avatar.png"
-          # 主页显示的网站副标题
-          subtitle = "一个简洁、优雅且高效的 Hugo 主题"
-          # 是否为副标题显示打字机动画
-          typeit = true
-          # 是否显示社交账号
-          social = true
-          # 免责声明 (支持 HTML 格式)
-          disclaimer = ""
-        # 主页文章列表
-        [languages.zh-cn.params.home.posts]
-          enable = true
-          # 主页每页显示文章数量
-          paginate = 6
-      # 主页的社交信息设置
-      [languages.zh-cn.params.social]
-        GitHub = "xxxx"
-        Linkedin = ""
-        Twitter = ""
-        Instagram = ""
-        Facebook = ""
-        Telegram = ""
-        Medium = ""
-        Gitlab = ""
-        Youtubelegacy = ""
-        Youtubecustom = ""
-        Youtubechannel = ""
-        Tumblr = ""
-        Quora = ""
-        Keybase = ""
-        Pinterest = ""
-        Reddit = ""
-        Codepen = ""
-        FreeCodeCamp = ""
-        Bitbucket = ""
-        Stackoverflow = ""
-        Weibo = "xxxx"
-        Odnoklassniki = ""
-        VK = ""
-        Flickr = ""
-        Xing = ""
-        Snapchat = ""
-        Soundcloud = ""
-        Spotify = ""
-        Bandcamp = ""
-        Paypal = ""
-        Fivehundredpx = ""
-        Mix = ""
-        Goodreads = ""
-        Lastfm = ""
-        Foursquare = ""
-        Hackernews = ""
-        Kickstarter = ""
-        Patreon = ""
-        Steam = "xxxx"
-        Twitch = ""
-        Strava = ""
-        Skype = ""
-        Whatsapp = ""
-        Zhihu = "xxxx"
-        Douban = "xxxx"
-        Angellist = ""
-        Slidershare = ""
-        Jsfiddle = ""
-        Deviantart = ""
-        Behance = ""
-        Dribbble = ""
-        Wordpress = ""
-        Vine = ""
-        Googlescholar = ""
-        Researchgate = ""
-        Mastodon = ""
-        Thingiverse = ""
-        Devto = "xxxx"
-        Gitea = ""
-        XMPP = ""
-        Matrix = ""
-        Bilibili = "xxxx"
-        Email = "xxxx@xxxx.com"
-        RSS = true
+  [[menu.main]]
+    identifier = "timeline"
+    pre = ""
+    post = ""
+    name = "时间线"
+    url = "/timeline/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    name = "标签"
+    url = "/tags/"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "分类"
+    url = "/categories/"
+    title = ""
+    weight = 4
+  [[menu.main]]
+    identifier = "links"
+    pre = ""
+    post = ""
+    name = "友情链接"
+    url = "/links/"
+    title = ""
+    weight = 5
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "关于"
+    url = "/about/"
+    title = ""
+    weight = 9
 
 [params]
   #  LoveIt 主题版本
   version = "0.2.X"
   # 网站描述
-  description = "这是我的全新 Hugo 网站"
+  description = "四次元里包含着二次元和三次元"
   # 网站关键词
   keywords = ["Theme", "Hugo"]
   # 网站默认主题样式 ("light", "dark", "auto")
@@ -235,7 +103,7 @@ enableEmoji = true
   #  应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "LoveIt"
+    title = "四次元科技"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -310,7 +178,7 @@ enableEmoji = true
 
   # 主页配置
   [params.home]
-    #  RSS 文章数目
+    # RSS 文章数目
     rss = 10
     # 主页个人信息
     [params.home.profile]
@@ -318,31 +186,29 @@ enableEmoji = true
       # Gravatar 邮箱，用于优先在主页显示的头像
       gravatarEmail = ""
       # 主页显示头像的 URL
-      avatarURL = "/images/avatar.png"
+      avatarURL = "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/avatar.jpg"
       # 主页显示的网站副标题
-      subtitle = "这是我的全新 Hugo 网站"
+      subtitle = "四次元里包含着二次元和三次元"
       # 是否为副标题显示打字机动画
       typeit = true
       # 是否显示社交账号
       social = true
-      #  免责声明 (支持 HTML 格式)
+      # 免责声明 (支持 HTML 格式)
       disclaimer = ""
     # 主页文章列表
     [params.home.posts]
       enable = true
       # 主页每页显示文章数量
-      paginate = 6
-      #  当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
-      defaultHiddenFromHomePage = false
+      paginate = 10
 
   # 作者的社交信息设置
   [params.social]
-    GitHub = "xxxx"
+    GitHub = "mouyase"
     Linkedin = ""
-    Twitter = "xxxx"
-    Instagram = "xxxx"
-    Facebook = "xxxx"
-    Telegram = "xxxx"
+    Twitter = "mouyase"
+    Instagram = ""
+    Facebook = ""
+    Telegram = ""
     Medium = ""
     Gitlab = ""
     Youtubelegacy = ""
@@ -357,7 +223,7 @@ enableEmoji = true
     FreeCodeCamp = ""
     Bitbucket = ""
     Stackoverflow = ""
-    Weibo = ""
+    Weibo = "6735775864"
     Odnoklassniki = ""
     VK = ""
     Flickr = ""
@@ -375,7 +241,7 @@ enableEmoji = true
     Hackernews = ""
     Kickstarter = ""
     Patreon = ""
-    Steam = ""
+    Steam = "mouyase"
     Twitch = ""
     Strava = ""
     Skype = ""
@@ -398,9 +264,9 @@ enableEmoji = true
     Gitea = ""
     XMPP = ""
     Matrix = ""
-    Bilibili = ""
-    Email = "xxxx@xxxx.com"
-    RSS = true # 
+    Bilibili = "6727744"
+    Email = "i@yojigen.tech"
+    RSS = true
 
   #  文章页面配置
   [params.page]
@@ -419,7 +285,7 @@ enableEmoji = true
     #  是否使用 fontawesome 扩展语法
     fontawesome = true
     # 是否在文章页面显示原始 Markdown 文档链接
-    linkToMarkdown = true
+    linkToMarkdown = false
     #  目录配置
     [params.page.toc]
       # 是否使用目录
@@ -431,7 +297,7 @@ enableEmoji = true
       # 是否显示代码块的复制按钮
       copy = true
       # 默认展开显示的代码行数
-      maxShownLines = 10
+      maxShownLines = 100
     #  KaTeX 数学公式
     [params.page.math]
       enable = true
@@ -510,14 +376,14 @@ enableEmoji = true
         clientSecret = ""
       # Valine 评论系统设置
       [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
-        placeholder = "Your comment ..."
+        enable = true
+        appId = "IDj1oJAL4ncR6jrRQKz9LmOo-gzGzoHsz"
+        appKey = "4wEsRbR1WtSisee2kjkjugUE"
+        placeholder = "你的评论 ..."
         avatar = "mp"
         meta= ""
         pageSize = 10
-        lang = "en"
+        lang = "zh-cn"
         visitor = true
         recordIP = true
         highlight = true
@@ -678,9 +544,9 @@ enableEmoji = true
 
 # 作者配置
 [author]
-  name = "xxxx"
-  email = ""
-  link = ""
+  name = "某亚瑟"
+  email = "i@yojigen.tech"
+  link = "/"
 
 # 网站地图配置
 [sitemap]
