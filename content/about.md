@@ -5,16 +5,10 @@ date: 2015-04-01T00:00:00+08:00
 lastmod: 2015-04-01T00:00:00+08:00
 draft: false
 description: ""
-
 tags: 
-
 categories: 
 featuredImage: ""
 featuredImagePreview: ""
-
-
-
-
 ---
 
 ## 这是哪
@@ -27,8 +21,8 @@ featuredImagePreview: ""
 ------------
 
 ## 我是谁
- - 我的ID是某亚瑟，一般大家都叫我`亚瑟`或者`阿瑟`
- - 罗马字符的ID一般是`mouyase`或者`MoeArthur`
+ - 我的ID是**某亚瑟**，一般大家都叫我`亚瑟`或者`阿瑟`
+ - 英文字符的ID一般是`mouyase`或者`MoeArthur`
  - 只要见到这个ID肯定就是我了，至今没见过重名的XD
  - 会点Android的开发，不过没啥作品
  - 因为工作需求，最近刚刚接触了iOS的开发
