@@ -1,0 +1,17 @@
+#id-1c1d34 {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  #id-1c1d34::selection {
+    background: black;
+    color: white; }
+  #id-1c1d34::-moz-selection {
+    background: black;
+    color: white; }
+  #id-1c1d34:hover {
+    background: black;
+    color: white; }

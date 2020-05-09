@@ -1,0 +1,41 @@
+#id-c7fbb4 {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#id-c7fbb4::selection {
+  background: black;
+  color: white; }
+
+#id-c7fbb4::-moz-selection {
+  background: black;
+  color: white; }
+
+#id-c7fbb4:hover {
+  background: black;
+  color: white; }
+
+#id-c7fbb4 a {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#id-c7fbb4 a::selection {
+  background: black;
+  color: white; }
+
+#id-c7fbb4 a::-moz-selection {
+  background: black;
+  color: white; }
+
+#id-c7fbb4 a:hover {
+  background: black;
+  color: white; }

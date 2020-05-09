@@ -1,0 +1,20 @@
+#id-30caa6 {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#id-30caa6::selection {
+  background: black;
+  color: white; }
+
+#id-30caa6::-moz-selection {
+  background: black;
+  color: white; }
+
+#id-30caa6:hover {
+  background: black;
+  color: white; }

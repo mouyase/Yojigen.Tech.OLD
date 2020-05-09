@@ -1,0 +1,41 @@
+#id-e96ccc {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#id-e96ccc::selection {
+  background: black;
+  color: white; }
+
+#id-e96ccc::-moz-selection {
+  background: black;
+  color: white; }
+
+#id-e96ccc:hover {
+  background: black;
+  color: white; }
+
+#id-e96ccc a {
+  background: black;
+  color: black;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#id-e96ccc a::selection {
+  background: black;
+  color: white; }
+
+#id-e96ccc a::-moz-selection {
+  background: black;
+  color: white; }
+
+#id-e96ccc a:hover {
+  background: black;
+  color: white; }
