@@ -30,7 +30,7 @@ paginate = 10
 # [UA-XXXXXXXX-X] 谷歌分析代号
 googleAnalytics = "UA-99576518-1"
 # 版权描述，仅仅用于 SEO
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)"
 # 菜单配置
 [menu]
   [[menu.main]]
@@ -156,7 +156,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
     icp = ""
     # 许可协议信息 (支持 HTML 格式)
-    license = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license = '<a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>'
 
   #  Section (所有文章) 页面配置
   [params.section]
