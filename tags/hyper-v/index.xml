@@ -1,15 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hyper-V | 标签 | 四次元科技</title>
+        <title>Hyper-V - 标签 - 四次元科技</title>
         <link>https://www.yojigen.tech/tags/hyper-v/</link>
-        <description>Hyper-V | 标签 | 四次元科技</description>
+        <description>Hyper-V - 标签 - 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
             <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Wed, 28 Aug 2019 10:10:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/hyper-v/" rel="self" type="application/rss+xml" /><item>
-                <title>解决Win10开启Hyper-V导致的安卓模拟器蓝屏问题</title>
-                <link>https://www.yojigen.tech/16/</link>
-                <pubDate>Wed, 28 Aug 2019 10:10:00 &#43;0800</pubDate>
-                <author>某亚瑟</author>
-                <guid>https://www.yojigen.tech/16/</guid>
-                <description>这Win10总有点莫名其妙的问题=。=</description>
-            </item></channel>
+    <title>解决Win10开启Hyper-V导致的安卓模拟器蓝屏问题</title>
+    <link>https://www.yojigen.tech/16/</link>
+    <pubDate>Wed, 28 Aug 2019 10:10:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.yojigen.tech/16/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/16/cover.jpg" referrerpolicy="no-referrer">
+            </div>这Win10总有点莫名其妙的问题=。=]]></description>
+</item></channel>
 </rss>
