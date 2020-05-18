@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>版本管理 | 标签 | 四次元科技</title>
+        <link>https://www.yojigen.tech/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
+        <description>版本管理 | 标签 | 四次元科技</description>
+        <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Mon, 01 Apr 2019 22:49:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+                <title>AndroidStudio推荐使用的.gitignore文件配置</title>
+                <link>https://www.yojigen.tech/5/</link>
+                <pubDate>Mon, 01 Apr 2019 22:49:00 &#43;0800</pubDate>
+                <author>某亚瑟</author>
+                <guid>https://www.yojigen.tech/5/</guid>
+                <description>直接上干货</description>
+            </item></channel>
+</rss>

@@ -1,0 +1,21 @@
+# 解决PyCharm内置pip升级失败（另附whl包下载站）
+
+
+
+## 故障
+
+用PyCharm创建了一个Django项目，因为需要安装mysqlclinet的库，所以必须要pip版本在19.2以上，结果在菜单里明明都已经升级到19.3.1了，但是终端窗口里看pip -V还是19.0，结果就不能安装。最后在网上找到了解决方案。
+
+```
+python -m pip install -U --force-reinstall pip
+```
+
+用这个指令强制升级pip，这样才是正常的升级。
+
+~~所以说PyCharm搞哪样嘛……~~
+
+## 附带
+
+有些pip的支持库需要编译，然而编译就要vs的编译环境，然后微软还不给你单独安装，装就是50G的vs全家桶，于是搜到了一个专门下载whl包的网站。
+
+[https://www.lfd.uci.edu/~gohlke/pythonlibs/](https://www.lfd.uci.edu/~gohlke/pythonlibs/)

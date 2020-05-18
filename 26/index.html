@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>部署一个Django的项目 | 四次元科技</title>
+        <meta name="Description" content=""><meta property="og:title" content="部署一个Django的项目" />
+<meta property="og:description" content="记录一下自己的项目是怎么部署的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yojigen.tech/26/" />
+<meta property="article:published_time" content="2020-01-21T23:30:00+08:00" />
+<meta property="article:modified_time" content="2020-01-21T23:30:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="部署一个Django的项目"/>
+<meta name="twitter:description" content="记录一下自己的项目是怎么部署的"/>
+<meta name="application-name" content="四次元科技">
+<meta name="apple-mobile-web-app-title" content="四次元科技"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yojigen.tech/26/" /><link rel="prev" href="https://www.yojigen.tech/25/" /><link rel="next" href="https://www.yojigen.tech/27/" /><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.23fe3a36ef90fd0889a144c398c6c8071284adb2d065a5c8ae2c39e0eafb9514.css" integrity="sha256-I/46Nu&#43;Q/QiJoUTDmMbIBxKErbLQZaXIriw54Or7lRQ="><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "部署一个Django的项目",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.yojigen.tech\/26\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.yojigen.tech\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "宝塔, 运维, Python, Djang","wordcount":  1108 ,
+        "url": "https:\/\/www.yojigen.tech\/26\/","datePublished": "2020-01-21T23:30:00+08:00","dateModified": "2020-01-21T23:30:00+08:00","license": "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.yojigen.tech\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "某亚瑟"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="四次元科技">四次元科技</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/timeline/"> 时间线 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/links/"> 友情链接 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="四次元科技">四次元科技</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/timeline/" title="">时间线</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/links/" title="">友情链接</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">部署一个Django的项目</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>某亚瑟</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E6%8A%80%E6%9C%AF/">
+                                <i class="far fa-folder fa-fw"></i>技术
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-21>2020-01-21</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1108 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;<span id="/26/" class="leancloud_visitors" data-flag-title="部署一个Django的项目">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备">准备</a></li>
+    <li><a href="#环境配置">环境配置</a></li>
+    <li><a href="#服务配置">服务配置</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="准备">准备</h2>
+<p>首先准备好最新版本的Python</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">rm -rf /usr/local/python3
+./configure --prefix=/usr/local/python3/
+make &amp;&amp; make install
+rm -rf /usr/local/bin/python3
+ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
+rm -rf /usr/local/bin/pip3
+ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
+</code></pre></td></tr></table>
+</div>
+</div><p>因为我用的是宝塔环境，宝塔自带了Nginx和Supervisor，所以不用单独安装了</p>
+<p>然后把代码上传到opt目录，我的上传到了<code>YojigenAPI</code>目录下</p>
+<p>这里我是使用了PyCharm的自带<code>Deployment</code>功能进行代码上传</p>
+<p>首先打开PyCharm的菜单栏的Tools &ndash;&gt; Deployment &ndash;&gt; Configure</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg" data-sub-html="<h2>打开配置</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/1.jpg" />
+    </a><figcaption class="image-caption">打开配置</figcaption>
+    </figure>
+<p>在里面添加一个新的服务器，我添加的服务器命名为<code>AliyunHK</code>，输入好服务器的登陆信息</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg" data-sub-html="<h2>添加服务器</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/2.jpg" />
+    </a><figcaption class="image-caption">添加服务器</figcaption>
+    </figure>
+<p>然后到Mappings页面，添加一下文件夹对应的路径配置，我这里是将代码放到了服务器的<code>/opt/YojigenAPI</code>目录下</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg" data-sub-html="<h2>配置路径</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/3.jpg" />
+    </a><figcaption class="image-caption">配置路径</figcaption>
+    </figure>
+<p>最后到Excluded Paths页面，添加一个Local Path，忽略掉本地的venv虚拟环境文件夹</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg" data-sub-html="<h2>配置忽略文件</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/4.jpg" />
+    </a><figcaption class="image-caption">配置忽略文件</figcaption>
+    </figure>
+<p>最后点击PyCharm的菜单栏的Tools &ndash;&gt; Deployment &ndash;&gt; Upload to AliyunHK，就可以将代码推送到服务器上了</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg" data-sub-html="<h2>部署代码</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/5.jpg" />
+    </a><figcaption class="image-caption">部署代码</figcaption>
+    </figure>
+<h2 id="环境配置">环境配置</h2>
+<p>ssh登陆到服务器，来到项目目录下，先创建一个虚拟环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">virtualenv -p /usr/local/bin/python3 --no-site-packages venv
+</code></pre></td></tr></table>
+</div>
+</div><p>然后进入到虚拟环境里</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">source venv/bin/activate
+</code></pre></td></tr></table>
+</div>
+</div><p>之后恢复pip的包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install -r requirements.txt
+</code></pre></td></tr></table>
+</div>
+</div><p>注意这里安装了<code>gunicorn</code>，默认的Django项目是不会安装的</p>
+<p>包都装完了，就可以退出虚拟环境了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">deactivate
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="服务配置">服务配置</h2>
+<p>先测试一下服务启动命令，10000是监听端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">venv/bin/gunicorn YojigenAPI.wsgi -b 0.0.0.0:10000
+</code></pre></td></tr></table>
+</div>
+</div><p>结果发现报错了，<code>The SECRET_KEY setting must not be empty.</code>，这个错误是项目配置文件找不到了，实际上是因为需要设置一下配置文件的环境变量才行，所以只要运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">venv/bin/gunicorn YojigenAPI.wsgi -b 0.0.0.0:10000 -e DJANGO_SETTINGS_MODULE=&#34;YojigenAPI.settings.prod&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>之后再启动，如果没错那就没问题了</p>
+<p>然而我又报错了，<code>SQLite 3.8.3 or later is required (found 3.7.17).</code>，这个问题是因为我用的是CentOS，系统自带的sqlite3版本太老，升级一下就可以了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./configure --prefix=/usr/local
+make &amp; make install
+</code></pre></td></tr></table>
+</div>
+</div><p>编译好了之后，执行一下这个，把/usr/local/lib添加到系统的链接库中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;/usr/local/lib&#34; &gt;&gt; /etc/ld.so.conf
+/sbin/ldconfig
+</code></pre></td></tr></table>
+</div>
+</div><p>之后再运行应该就可以正常启动了，然后配置更新一下数据库，以及转存一下静态文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">venv/bin/python manage.py migrate --settings=YojigenAPI.settings.prod
+venv/bin/python manage.py createsuperuser --settings=YojigenAPI.settings.prod
+venv/bin/python manage.py collectstatic --settings=YojigenAPI.settings.prod
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来就是配置Supervisor守护进程了，因为我用了宝塔，宝塔里面有现成的Supervisor管理器，这里就直接使用宝塔的管理器了</p>
+<p>填写进去启动信息，保存即可</p>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg" data-sub-html="<h2>宝塔配置Supervisor</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/26/6.jpg" />
+    </a><figcaption class="image-caption">宝塔配置Supervisor</figcaption>
+    </figure>
+<p>最后就是大家都熟悉的Nginx配置反向代理了，反向代理到对应的域名上就可以了，不过这里有个坑，是关于静态文件的，宝塔默认的配置里包含了css和js的相关配置，要去给他删了才行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">location /
+{
+	proxy_pass http://127.0.0.1:10000;
+	proxy_set_header Host api.yojigen.tech;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header REMOTE-HOST $remote_addr;
+	add_header X-Cache $upstream_cache_status;
+}
+
+location /static/ 
+{
+	alias /opt/YojigenAPI/static/;
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>到此配置全部完成，代码成功上线啦。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-01-21 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.yojigen.tech/26/" data-title="部署一个Django的项目" data-via="mouyase" data-hashtags="宝塔,运维,Python,Djang"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.yojigen.tech/26/" data-hashtag="宝塔"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://www.yojigen.tech/26/" data-title="部署一个Django的项目"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.yojigen.tech/26/" data-title="部署一个Django的项目"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://www.yojigen.tech/26/" data-title="部署一个Django的项目"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%AE%9D%E5%A1%94/">宝塔</a>,&nbsp;<a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>,&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/djang/">Djang</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/25/" class="prev" rel="prev" title="硬座火车，可能就代表了社会最底层"><i class="fas fa-angle-left fa-fw"></i>硬座火车，可能就代表了社会最底层</a>
+            <a href="/27/" class="next" rel="next" title="「技术」打造一个漂亮的Android标题栏">「技术」打造一个漂亮的Android标题栏<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><a href="https://www.mokeyjay.com">超能小紫</a> | <a href="https://www.himiku.com/">初之音</a></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.0"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2015 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">某亚瑟</a></span>&nbsp;|&nbsp;<span class="license"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.d1fbdffde72e1d2dda014371221ceae98386f7a921cc8ba9dcf62704ec90cb46.css" integrity="sha256-0fvf/ecuHS3aAUNxIhzq6YOG96khzIup3PYnBOyQy0Y="><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"IDj1oJAL4ncR6jrRQKz9LmOo-gzGzoHsz","appKey":"4wEsRbR1WtSisee2kjkjugUE","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"headerMode":{"desktop":"fixed","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/autocomplete.js/0.37.1/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.0ea52306efe5f23fc0fd041d203a0d2866c1fff489ca5e04d8366488ce685047.js" integrity="sha256-DqUjBu/l8j/A/QQdIDoNKGbB//SJyl4E2DZkiM5oUEc="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.389393f5fcc7b6fcda349d85077c73da93fd8bb646c4b196b7bac915d5cd8ceb.js" integrity="sha256-OJOT9fzHtvzaNJ2FB3xz2pP9i7ZGxLGWt7rJFdXNjOs="></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.7a84c63ab156d68e4a7269487c9c65a4eb34b0c7864f2d3fd2b87f7c664480d3.js" integrity="sha256-eoTGOrFW1o5KcmlIfJxlpOs0sMeGTy0/0rh/fGZEgNM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.eab31af8f90835b7ab674b2dd2474841039bc01022aa312f80dde6e22fde58d7.js" integrity="sha256-6rMa&#43;PkINberZ0st0kdIQQObwBAiqjEvgN3m4i/eWNc="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.e3a7e6bb4a69f8627654ba9e0ab1252971bcfb400538dbb0605db9a3342ce5b9.js" integrity="sha256-46fmu0pp&#43;GJ2VLqeCrElKXG8&#43;0AFONuwYF25ozQs5bk="></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/sharer.js/0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.f1fc55bf0b3a0d4e3e78c7c6b1375def5d3481fd9813fad1dfd9becfa416859e.js" integrity="sha256-8fxVvws6DU4&#43;eMfGsTdd7100gf2YE/rR39m&#43;z6QWhZ4="></script></body>
+</html>

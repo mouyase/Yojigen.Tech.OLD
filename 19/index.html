@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>使用Cloudflare Workers反带P站图片 | 四次元科技</title>
+        <meta name="Description" content=""><meta property="og:title" content="使用Cloudflare Workers反带P站图片" />
+<meta property="og:description" content="效果还不错，就是有点慢(￣▽￣)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yojigen.tech/19/" />
+<meta property="article:published_time" content="2019-09-28T10:51:00+08:00" />
+<meta property="article:modified_time" content="2019-09-28T10:51:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Cloudflare Workers反带P站图片"/>
+<meta name="twitter:description" content="效果还不错，就是有点慢(￣▽￣)"/>
+<meta name="application-name" content="四次元科技">
+<meta name="apple-mobile-web-app-title" content="四次元科技"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.yojigen.tech/19/" /><link rel="prev" href="https://www.yojigen.tech/18/" /><link rel="next" href="https://www.yojigen.tech/20/" /><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.23fe3a36ef90fd0889a144c398c6c8071284adb2d065a5c8ae2c39e0eafb9514.css" integrity="sha256-I/46Nu&#43;Q/QiJoUTDmMbIBxKErbLQZaXIriw54Or7lRQ="><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用Cloudflare Workers反带P站图片",
+        "inLanguage": "",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.yojigen.tech\/19\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.yojigen.tech\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "反向代理, 图站, Pixiv, PivisionM, Cloudflare Workers","wordcount":  801 ,
+        "url": "https:\/\/www.yojigen.tech\/19\/","datePublished": "2019-09-28T10:51:00+08:00","dateModified": "2019-09-28T10:51:00+08:00","license": "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.yojigen.tech\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "某亚瑟"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="四次元科技">四次元科技</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/timeline/"> 时间线 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/links/"> 友情链接 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="四次元科技">四次元科技</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/timeline/" title="">时间线</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/links/" title="">友情链接</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用Cloudflare Workers反带P站图片</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/about/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>某亚瑟</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E6%8A%80%E6%9C%AF/">
+                                <i class="far fa-folder fa-fw"></i>技术
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-09-28>2019-09-28</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 801 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;<span id="/19/" class="leancloud_visitors" data-flag-title="使用Cloudflare Workers反带P站图片">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#教程">教程</a>
+      <ul>
+        <li><a href="#1-前提准备">1. 前提准备</a></li>
+        <li><a href="#2-步骤">2. 步骤</a></li>
+      </ul>
+    </li>
+    <li><a href="#演示">演示</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>近期一直在搞Pixiv相关的东西，也拿到了<a href="https://yojigen.tech/archives/pivisionm.html" target="_blank" rel="noopener noreffer">Pivision</a>的原作者reiya的正式授权，成了新的维护者。于是一个又一个的问题摆在我面前，我必须要把她们一个一个推倒。
+目前比较棘手的问题是：如何注册账号。实际上解决办法也很简单，反带P站就完事了。但这会出现另一个严重的问题：反带了P站，大量的图片会让我的小服务器吃不消。这时候，我发现了Cloudflare Workers。</p>
+<h2 id="简介">简介</h2>
+<figure><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg" data-sub-html="<h2>反代演示</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/cover.jpg" />
+    </a><figcaption class="image-caption">反代演示</figcaption>
+    </figure>
+<p>Cloudflare提供了免费的额度，每天10万次请求而不计算流量，简直就是用来反带的神器！</p>
+<h2 id="教程">教程</h2>
+<h3 id="1-前提准备">1. 前提准备</h3>
+<ul>
+<li>一个域名</li>
+<li>域名要使用Cloudflare的NS解析</li>
+</ul>
+<h3 id="2-步骤">2. 步骤</h3>
+<p>首先注册一个Cloudflare账号（估计大多数人都有），之后把你的域名使用Cloudflare解析（这个过程我觉得没必要详细讲了……）</p>
+<a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/1.jpg" width="100%" />
+    </a>
+<p>然后打开你的域名管理页面，点击上面的Workers，再点击Launch Editor，进入脚本编辑器。</p>
+<a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/2.jpg" width="100%" />
+    </a>
+<p>在编辑器中，点击左侧的Add script，之后输入脚本的名称，随便填一个<code>pximg</code>就好，之后点击Confirm创建脚本。</p>
+<p>之后左侧会多出来一个脚本，点进去开始编辑。</p>
+<p>删除掉里面所有的代码，粘贴下面的代码进去。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;fetch&#34;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URL</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+  <span class="nx">url</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">=</span> <span class="s2">&#34;i.pximg.net&#34;</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Request</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">request</span><span class="p">);</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">respondWith</span><span class="p">(</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;Referer&#39;</span><span class="o">:</span> <span class="s1">&#39;https://www.pixiv.net/&#39;</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/3.jpg" width="100%" />
+    </a>
+<p>就像这样，然后点击save保存脚本。然后点击左上角的Dashboard返回域名面板。</p>
+<a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/4.jpg" width="100%" />
+    </a>
+<p>之后点击Add route，填写<code>https://你的域名/*</code>，并且下面选择刚刚创建的脚本，举例如图。</p>
+<a class="lightgallery" href="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg" title="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg" data-thumbnail="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg 1.5x, https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg 2x"
+            data-src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg"
+            alt="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/19/5.jpg" width="100%" />
+    </a>
+<p>再之后点击<code>new Workers dashboard</code>，根据提示创建一个二级域名。例如我的二级域名是<code>4cy.workers.dev</code>，而刚刚创建的脚本的域名就是<code>pximg.4cy.workers.dev</code>。</p>
+<p>最后一步，到DNS页面，添加一个CNAME记录到你的脚本域名下，并开启云加速。</p>
+<p>至此，你就可以使用你的域名来作为Pixiv的图片反向代理了。</p>
+<h2 id="演示">演示</h2>
+<p><a href="https://i.pximg.net/img-original/img/2019/09/04/00/00/04/76611488_p0.png" target="_blank" rel="noopener noreffer">https://i.pximg.net/img-original/img/2019/09/04/00/00/04/76611488_p0.png</a></p>
+<figure><a class="lightgallery" href="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png" title="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png" data-thumbnail="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png" data-sub-html="<h2>反代演示</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-sizes="auto"
+            data-srcset="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png, https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png 1.5x, https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png 2x"
+            data-src="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png"
+            alt="https://i-pximg.yojigen.tech/img-original/img/2019/09/04/00/00/04/76611488_p0.png" />
+    </a><figcaption class="image-caption">反代演示</figcaption>
+    </figure>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-09-28 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.yojigen.tech/19/" data-title="使用Cloudflare Workers反带P站图片" data-via="mouyase" data-hashtags="反向代理,图站,Pixiv,PivisionM,Cloudflare Workers"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.yojigen.tech/19/" data-hashtag="反向代理"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://www.yojigen.tech/19/" data-title="使用Cloudflare Workers反带P站图片"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.yojigen.tech/19/" data-title="使用Cloudflare Workers反带P站图片"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://www.yojigen.tech/19/" data-title="使用Cloudflare Workers反带P站图片"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">反向代理</a>,&nbsp;<a href="/tags/%E5%9B%BE%E7%AB%99/">图站</a>,&nbsp;<a href="/tags/pixiv/">Pixiv</a>,&nbsp;<a href="/tags/pivisionm/">PivisionM</a>,&nbsp;<a href="/tags/cloudflare-workers/">Cloudflare Workers</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/18/" class="prev" rel="prev" title="关于Pixiv第三方客户端无法登陆问题"><i class="fas fa-angle-left fa-fw"></i>关于Pixiv第三方客户端无法登陆问题</a>
+            <a href="/20/" class="next" rel="next" title="命运2攻略整理合集">命运2攻略整理合集<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><a href="https://www.mokeyjay.com">超能小紫</a> | <a href="https://www.himiku.com/">初之音</a></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.0"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2015 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/about/" target="_blank">某亚瑟</a></span>&nbsp;|&nbsp;<span class="license"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.d1fbdffde72e1d2dda014371221ceae98386f7a921cc8ba9dcf62704ec90cb46.css" integrity="sha256-0fvf/ecuHS3aAUNxIhzq6YOG96khzIup3PYnBOyQy0Y="><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"IDj1oJAL4ncR6jrRQKz9LmOo-gzGzoHsz","appKey":"4wEsRbR1WtSisee2kjkjugUE","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"headerMode":{"desktop":"fixed","mobile":"auto"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/autocomplete.js/0.37.1/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.0ea52306efe5f23fc0fd041d203a0d2866c1fff489ca5e04d8366488ce685047.js" integrity="sha256-DqUjBu/l8j/A/QQdIDoNKGbB//SJyl4E2DZkiM5oUEc="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.389393f5fcc7b6fcda349d85077c73da93fd8bb646c4b196b7bac915d5cd8ceb.js" integrity="sha256-OJOT9fzHtvzaNJ2FB3xz2pP9i7ZGxLGWt7rJFdXNjOs="></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.7a84c63ab156d68e4a7269487c9c65a4eb34b0c7864f2d3fd2b87f7c664480d3.js" integrity="sha256-eoTGOrFW1o5KcmlIfJxlpOs0sMeGTy0/0rh/fGZEgNM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.eab31af8f90835b7ab674b2dd2474841039bc01022aa312f80dde6e22fde58d7.js" integrity="sha256-6rMa&#43;PkINberZ0st0kdIQQObwBAiqjEvgN3m4i/eWNc="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.e3a7e6bb4a69f8627654ba9e0ab1252971bcfb400538dbb0605db9a3342ce5b9.js" integrity="sha256-46fmu0pp&#43;GJ2VLqeCrElKXG8&#43;0AFONuwYF25ozQs5bk="></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/sharer.js/0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.f1fc55bf0b3a0d4e3e78c7c6b1375def5d3481fd9813fad1dfd9becfa416859e.js" integrity="sha256-8fxVvws6DU4&#43;eMfGsTdd7100gf2YE/rR39m&#43;z6QWhZ4="></script></body>
+</html>
