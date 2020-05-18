@@ -87,7 +87,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
   #  LoveIt 主题版本
   version = "0.2.X"
   # 网站描述
-  summary = "有关二次元、三次元、科技以及一切"
+  description = "有关二次元、三次元、科技以及一切"
   # 网站关键词
   keywords = ["四次元","四次元科技","Android开发","SDK","美少女","二次元","ASMR","同人音声","某亚瑟","Yojigen","SSH","Android","Python"]
   # 网站默认主题样式 ("light", "dark", "auto")
@@ -99,6 +99,8 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
   fingerprint = ""
   #  日期格式
   dateFormat = "2006-01-02"
+  # 网站图片, 用于 Open Graph 和 Twitter Cards
+  images = ["/logo.png"]
 
   #  应用图标配置
   [params.app]
@@ -121,13 +123,17 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     # 搜索引擎的类型 ("lunr", "algolia")
     type = "lunr"
     # 文章内容最长索引长度
-    contentLength = 5000
+    contentLength = 4000
     # 搜索框的占位提示语
     placeholder = ""
     # 最大结果数目
     maxResultLength = 10
+    # 结果内容片段长度
+    snippetLength = 50
     # 搜索结果中高亮部分的 HTML 标签
     highlightTag = "em"
+    # 是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL = false
     [params.search.algolia]
       index = ""
       appID = ""
@@ -286,6 +292,8 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     fontawesome = true
     # 是否在文章页面显示原始 Markdown 文档链接
     linkToMarkdown = false
+    #  是否在 RSS 中显示全文内容
+    rssFullText = false
     #  目录配置
     [params.page.toc]
       # 是否使用目录
@@ -389,6 +397,12 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
         highlight = true
         enableQQ = false
         serverURLs = ""
+        #  emoji 数据文件名称, 默认是 "google.yml"
+        # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
+        # 位于 "themes/LoveIt/assets/data/emoji/" 目录
+        # 可以在你的项目下相同路径存放你自己的数据文件:
+        # "assets/data/emoji/"
+        emoji = ""
       # Facebook 评论系统设置
       [params.page.comment.facebook]
         enable = false
@@ -409,6 +423,27 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
       #  Commento 评论系统设置
       [params.page.comment.commento]
         enable = false
+              #  Utterances 评论系统设置
+      [params.page.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+    #  第三方库配置
+    [params.page.library]
+      [params.page.library.css]
+        # someCSS = "some.css"
+        # 位于 "assets/"
+        # 或者
+        # someCSS = "https://cdn.example.com/some.css"
+      [params.page.library.js]
+        # someJavascript = "some.js"
+        # 位于 "assets/"
+        # 或者
+        # someJavascript = "https://cdn.example.com/some.js"
     #  SEO config
     [params.page.seo]
       # 出版者信息
@@ -428,6 +463,17 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
         url = "cover.png"
         width = 800
         height = 600
+
+  #  TypeIt 配置
+  [params.typeit]
+    # 每一步的打字速度 (单位是毫秒)
+    speed = 100
+    # 光标的闪烁速度 (单位是毫秒)
+    cursorSpeed = 1000
+    # 光标的字符 (支持 HTML 格式)
+    cursorChar = "|"
+    # 打字结束之后光标的持续时间 (单位是毫秒, "-1" 代表无限大)
+    duration = -1
 
   # 网站验证代码，用于 Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]
@@ -453,65 +499,30 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
       # 自行托管追踪器时的主机路径
       server = ""
 
-  # CSS 和 JS 文件的 CDN 设置
+  #  Cookie 许可配置
+  [params.cookieconsent]
+    enable = true
+    # 用于 Cookie 许可横幅的文本字符串
+    [params.cookieconsent.content]
+      message = ""
+      dismiss = ""
+      link = ""
+
+  #  第三方库文件的 CDN 设置
   [params.cdn]
-    #  normalize.css@8.0.1
-    normalizeCSS = 'https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css'
-    # fontawesome-free@5.13.0
-    fontawesomeFreeCSS = 'https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css'
-    #  simple-icons@2.9.0
-    # ('https://cdn.jsdelivr.net/npm/simple-icons@v2/icons/')
-    simpleIconsPrefix = 'https://cdn.jsdelivr.net/npm/simple-icons@2.9.0/icons/'
-    # animate.css@3.7.2 https://github.com/daneden/animate.css
-    animateCSS = 'https://cdn.bootcdn.net/ajax/libs/animate.css/3.7.2/animate.min.css'
-    # smooth-scroll@16.1.3
-    smoothScrollJS = 'https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3'
-    #  autocomplete.js@0.37.1
-    autocompleteJS = 'https://cdn.bootcdn.net/ajax/libs/autocomplete.js/0.37.1/autocomplete.min.js'
-    #  lunr.js@2.3.8
-    lunrJS = 'https://cdn.bootcdn.net/ajax/libs/lunr.js/2.3.8/lunr.min.js'
-    #  algoliasearch@4.2.0
-    algoliasearchJS = ''
-    # lazysizes@5.2.0
-    lazysizesJS = 'https://cdn.bootcdn.net/ajax/libs/lazysizes/5.2.0/lazysizes.min.js'
-    #  twemoji@12.1.5
-    twemojiJS = 'https://cdn.bootcdn.net/ajax/libs/twemoji/12.0.4/twemoji.min.js'
-    # lightgallery.js@1.1.3 lg-thumbnail@1.1.0 lg-zoom@1.1.0
-    lightgalleryCSS = ''
-    lightgalleryJS = ''
-    lightgalleryThumbnailJS = ''
-    lightgalleryZoomJS = ''
-    #  clipboard.js@2.0.6
-    clipboardJS = 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js'
-    # sharer.js@0.4.0
-    sharerJS = 'https://cdn.bootcdn.net/ajax/libs/sharer.js/0.4.0/sharer.min.js'
-    # typeit@7.0.3
-    typeitJS = 'https://cdn.bootcdn.net/ajax/libs/typeit/7.0.3/typeit.min.js'
-    # katex@0.11.1
-    katexCSS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.css'
-    katexJS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/katex.min.js'
-    katexAutoRenderJS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js'
-    katexCopyTexCSS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.css'
-    katexCopyTexJS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/copy-tex.min.js'
-    katexMhchemJS = 'https://cdn.bootcdn.net/ajax/libs/KaTeX/0.11.1/contrib/mhchem.min.js'
-    # mermaid@8.5.0
-    mermaidJS = 'https://cdn.bootcdn.net/ajax/libs/mermaid/8.5.0/mermaid.min.js'
-    # echarts@4.7.0
-    echartsJS = ''
-    echartsMacaronsJS = ''
-    #  mapbox-gl@1.9.1
-    mapboxGLCSS = 'https://cdn.bootcdn.net/ajax/libs/mapbox-gl/1.9.1/mapbox-gl.css'
-    mapboxGLJS = 'https://cdn.bootcdn.net/ajax/libs/mapbox-gl/1.9.1/mapbox-gl.min.js'
-    # aplayer@1.10.1
-    aplayerCSS = 'https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css'
-    aplayerJS = 'https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js'
-    # meting@2.0.1
-    metingJS = ''
-    # gitalk@1.6.2
-    gitalkCSS = 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.6.2/gitalk.min.css'
-    gitalkJS = 'https://cdn.bootcdn.net/ajax/libs/gitalk/1.6.2/gitalk.min.js'
-    # valine@1.4.9
-    valineJS = 'https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js'
+    # CDN 数据文件名称, 默认不启用
+    # ("jsdelivr.yml")
+    # 位于 "themes/LoveIt/assets/data/cdn/" 目录
+    # 可以在你的项目下相同路径存放你自己的数据文件:
+    # "assets/data/cdn/"
+    data = ""
+
+  #  兼容性设置
+  [params.compatibility]
+    # 是否使用 Polyfill.io 来兼容旧式浏览器
+    polyfill = false
+    # 是否使用 object-fit-images 来兼容旧式浏览器
+    objectFit = false
 
 # Hugo 解析文档的配置
 [markup]
