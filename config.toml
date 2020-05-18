@@ -402,7 +402,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
         # 位于 "themes/LoveIt/assets/data/emoji/" 目录
         # 可以在你的项目下相同路径存放你自己的数据文件:
         # "assets/data/emoji/"
-        emoji = ""
+        emoji = "google.yml"
       # Facebook 评论系统设置
       [params.page.comment.facebook]
         enable = false
@@ -515,7 +515,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     # 位于 "themes/LoveIt/assets/data/cdn/" 目录
     # 可以在你的项目下相同路径存放你自己的数据文件:
     # "assets/data/cdn/"
-    data = ""
+    data = "jsdelivr.yml"
 
   #  兼容性设置
   [params.compatibility]
