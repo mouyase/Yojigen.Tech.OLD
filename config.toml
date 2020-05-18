@@ -1,4 +1,4 @@
-baseURL = "https://yojigen.tech"
+baseURL = "https://www.yojigen.tech"
 # [en, zh-cn, fr, ...] determines default content language
 # [en, zh-cn, fr, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
