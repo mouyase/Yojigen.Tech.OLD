@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>dnscrypt-proxy | 标签 | 四次元科技</title>
-        <link>https://www.yojigen.tech/tags/dnscrypt-proxy/</link>
+        <link>https://yojigen.tech/tags/dnscrypt-proxy/</link>
         <description>dnscrypt-proxy | 标签 | 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Mon, 17 Feb 2020 03:30:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/dnscrypt-proxy/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Mon, 17 Feb 2020 03:30:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/dnscrypt-proxy/" rel="self" type="application/rss+xml" /><item>
                 <title>为macOS打造一个防污染的本地DNS</title>
-                <link>https://www.yojigen.tech/28/</link>
+                <link>https://yojigen.tech/28/</link>
                 <pubDate>Mon, 17 Feb 2020 03:30:00 &#43;0800</pubDate>
                 <author>某亚瑟</author>
-                <guid>https://www.yojigen.tech/28/</guid>
+                <guid>https://yojigen.tech/28/</guid>
                 <description>家里这边DNS劫持是在是有点严重，非常影响开发速度，所以我就使用dnsmasq和dnscrypt-proxy搭建了一个防污染防劫持的本地DNS，并且内附一键安装脚本</description>
             </item></channel>
 </rss>

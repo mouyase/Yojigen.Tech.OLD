@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>API | 标签 | 四次元科技</title>
-        <link>https://www.yojigen.tech/tags/api/</link>
+        <link>https://yojigen.tech/tags/api/</link>
         <description>API | 标签 | 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Thu, 05 Sep 2019 10:40:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/api/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Thu, 05 Sep 2019 10:40:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/api/" rel="self" type="application/rss+xml" /><item>
                 <title>关于Pixiv第三方客户端无法登陆问题</title>
-                <link>https://www.yojigen.tech/18/</link>
+                <link>https://yojigen.tech/18/</link>
                 <pubDate>Thu, 05 Sep 2019 10:40:00 &#43;0800</pubDate>
                 <author>某亚瑟</author>
-                <guid>https://www.yojigen.tech/18/</guid>
+                <guid>https://yojigen.tech/18/</guid>
                 <description>只要在Header里塞两个参数就可以了</description>
             </item></channel>
 </rss>

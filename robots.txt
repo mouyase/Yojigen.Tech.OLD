@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://www.yojigen.tech/sitemap.xml
+Sitemap: https://yojigen.tech/sitemap.xml
