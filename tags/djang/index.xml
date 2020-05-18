@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Djang | 标签 | 四次元科技</title>
-        <link>https://yojigen.tech/tags/djang/</link>
+        <link>https://www.yojigen.tech/tags/djang/</link>
         <description>Djang | 标签 | 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Tue, 21 Jan 2020 23:30:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/djang/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Tue, 21 Jan 2020 23:30:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/djang/" rel="self" type="application/rss+xml" /><item>
                 <title>部署一个Django的项目</title>
-                <link>https://yojigen.tech/26/</link>
+                <link>https://www.yojigen.tech/26/</link>
                 <pubDate>Tue, 21 Jan 2020 23:30:00 &#43;0800</pubDate>
                 <author>某亚瑟</author>
-                <guid>https://yojigen.tech/26/</guid>
+                <guid>https://www.yojigen.tech/26/</guid>
                 <description>记录一下自己的项目是怎么部署的</description>
             </item></channel>
 </rss>

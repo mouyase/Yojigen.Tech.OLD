@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>同人音声 | 标签 | 四次元科技</title>
-        <link>https://yojigen.tech/tags/%E5%90%8C%E4%BA%BA%E9%9F%B3%E5%A3%B0/</link>
+        <link>https://www.yojigen.tech/tags/%E5%90%8C%E4%BA%BA%E9%9F%B3%E5%A3%B0/</link>
         <description>同人音声 | 标签 | 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Sun, 23 Feb 2020 22:50:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/%E5%90%8C%E4%BA%BA%E9%9F%B3%E5%A3%B0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Sun, 23 Feb 2020 22:50:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/%E5%90%8C%E4%BA%BA%E9%9F%B3%E5%A3%B0/" rel="self" type="application/rss+xml" /><item>
                 <title>中文同人音声——炼金术士与治愈工坊</title>
-                <link>https://yojigen.tech/30/</link>
+                <link>https://www.yojigen.tech/30/</link>
                 <pubDate>Sun, 23 Feb 2020 22:50:00 &#43;0800</pubDate>
                 <author>某亚瑟</author>
-                <guid>https://yojigen.tech/30/</guid>
+                <guid>https://www.yojigen.tech/30/</guid>
                 <description>这位先生，要不要来异世界了解一下炼金术呢？</description>
             </item></channel>
 </rss>

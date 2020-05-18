@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Switch | 标签 | 四次元科技</title>
-        <link>https://yojigen.tech/tags/switch/</link>
+        <link>https://www.yojigen.tech/tags/switch/</link>
         <description>Switch | 标签 | 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Fri, 01 May 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/switch/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Fri, 01 May 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/switch/" rel="self" type="application/rss+xml" /><item>
                 <title>用DS4当全平台手柄——八位堂手柄转换器体验</title>
-                <link>https://yojigen.tech/32/</link>
+                <link>https://www.yojigen.tech/32/</link>
                 <pubDate>Fri, 01 May 2020 12:50:00 &#43;0800</pubDate>
                 <author>某亚瑟</author>
-                <guid>https://yojigen.tech/32/</guid>
+                <guid>https://www.yojigen.tech/32/</guid>
                 <description>只需99元就能圆你全平台手柄的梦</description>
             </item></channel>
 </rss>
