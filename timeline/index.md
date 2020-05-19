@@ -4,6 +4,10 @@
 <!--more-->
 
 ## 2020年
+
+### 五月
+ - 笔记本电池鼓了
+
 ### 四月
  - 因为各种原因入手了动森
  - 复工干了几天活，然后又回家办公了
@@ -48,12 +52,12 @@
 
 ### 七月
  - 门口捡了一台NS，玩的不亦乐乎
- - 调整了一波服务器资源，弄了一个[四次元图床](https://img.4cy.me)
+ - 调整了一波服务器资源，弄了一个[~~四次元图床~~](https://img.4cy.me)
  - 学会了使用[Travis-CI](https://travis-ci.com)
 
 ### 六月
- - 炸掉了[偶像大师中文社区](https://project-imas.cn/about)
- - 换成了[偶像大师粉丝团](https://imas.fun/about)
+ - 炸掉了[~~偶像大师中文社区~~](https://project-imas.cn/about)
+ - 换成了[~~偶像大师粉丝团~~](https://imas.fun/about)
 
 ### 五月
  - 搬家到公司附近的地方
@@ -61,23 +65,23 @@
 
 ### 四月
  - 公司配发了一台MBP，开始了使用macOS，以及开始接触iOS的软件开发
- - [到玉渊潭公园拍了张照片](https://yojigen.tech/archives/46.html)
- - [魔改了Pivision这个App，实现直连Pixiv](https://yojigen.tech/archives/25.html)
+ - [到玉渊潭公园拍了张照片](https://www.yojigen.tech/6/)
+ - [魔改了Pivision这个App，实现直连Pixiv](https://www.yojigen.tech/8/)
 
 ### 三月
- - 建立了[偶像大师中文社区](https://project-imas.cn/about)
+ - 建立了[~~偶像大师中文社区~~](https://project-imas.cn/about)
  - 迁移了博客服务器到Amazon
  - 迁移了博客程序到Wordpress
  - 全站内容第三次重构
  - 换了新的主题[二次元向WP主题: Kratos-pjax](https://www.fczbl.vip/787.html)，顺便魔改了一下
  - 入职了新的工作[@原子钟信息科技](https://www.yzztech.com/)
- - 购入了[索尼狗圈WI-1000X](https://yojigen.tech/archives/50.html)
+ - 购入了[索尼狗圈WI-1000X](https://www.yojigen.tech/7/)
  - 购入了人生第一台相机索尼NEX-5T
 
 ### 二月
- - 购买了新域名[4cy.me](https://4cy.me)
+ - 购买了新域名[~~4cy.me~~](https://4cy.me)
  - IIDX段位达到1级
- - [建立了图站标签汉化项目](https://yojigen.tech/archives/3.html)
+ - [建立了图站标签汉化项目](https://www.yojigen.tech/1/)
 
 ### 一月
  - IIDX段位达到3级
