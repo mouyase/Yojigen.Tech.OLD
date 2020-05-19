@@ -156,7 +156,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     #  是否显示版权信息
     copyright = true
     #  是否显示作者
-    author = true
+    author = false
     # 网站创立年份
     since = 2015
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
@@ -553,7 +553,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
 
 # 作者配置
 [author]
-  name = "某亚瑟"
+  name = "四次元科技"
   email = "i@yojigen.tech"
   link = "/about/"
 
