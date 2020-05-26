@@ -1,31 +1,31 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>运维 - 标签 - 四次元科技</title>
-        <link>https://www.yojigen.tech/tags/%E8%BF%90%E7%BB%B4/</link>
+        <link>https://yojigen.tech/tags/%E8%BF%90%E7%BB%B4/</link>
         <description>运维 - 标签 - 四次元科技</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Wed, 01 Apr 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://www.yojigen.tech/tags/%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Wed, 01 Apr 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/tags/%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
     <title>还在困扰海外服务器SSH太慢吗？来试试这个</title>
-    <link>https://www.yojigen.tech/31/</link>
+    <link>https://yojigen.tech/31/</link>
     <pubDate>Wed, 01 Apr 2020 12:50:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.yojigen.tech/31/</guid>
+    <guid>https://yojigen.tech/31/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/31/cover.jpg" referrerpolicy="no-referrer">
             </div>免费好用，只希望不要被滥用]]></description>
 </item><item>
     <title>部署一个Django的项目</title>
-    <link>https://www.yojigen.tech/26/</link>
+    <link>https://yojigen.tech/26/</link>
     <pubDate>Tue, 21 Jan 2020 23:30:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.yojigen.tech/26/</guid>
+    <guid>https://yojigen.tech/26/</guid>
     <description><![CDATA[记录一下自己的项目是怎么部署的]]></description>
 </item><item>
     <title>低配VPS上的MySQL优化</title>
-    <link>https://www.yojigen.tech/14/</link>
+    <link>https://yojigen.tech/14/</link>
     <pubDate>Mon, 05 Aug 2019 09:51:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.yojigen.tech/14/</guid>
+    <guid>https://yojigen.tech/14/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/14/cover.gif" referrerpolicy="no-referrer">
             </div>小内存机器上也能跑MySQL]]></description>
