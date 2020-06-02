@@ -4,7 +4,16 @@
         <link>https://yojigen.tech/</link>
         <description>有关二次元、三次元、科技以及一切</description>
         <generator>Hugo -- gohugo.io</generator><managingEditor>i@yojigen.tech (某亚瑟)</managingEditor>
-            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Fri, 01 May 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>i@yojigen.tech (某亚瑟)</webMaster><copyright>署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</copyright><lastBuildDate>Mon, 18 May 2020 12:50:00 &#43;0800</lastBuildDate><atom:link href="https://yojigen.tech/" rel="self" type="application/rss+xml" /><item>
+    <title>一场异世界冒险的梦——我与《泰拉瑞亚》的故事</title>
+    <link>https://yojigen.tech/33/</link>
+    <pubDate>Mon, 18 May 2020 12:50:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://yojigen.tech/33/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/33/cover.jpg" referrerpolicy="no-referrer">
+            </div>就当是一场梦，醒了很久还是很感动]]></description>
+</item><item>
     <title>用DS4当全平台手柄——八位堂手柄转换器体验</title>
     <link>https://yojigen.tech/32/</link>
     <pubDate>Fri, 01 May 2020 12:50:00 &#43;0800</pubDate>
@@ -79,12 +88,5 @@
     <author>作者</author>
     <guid>https://yojigen.tech/24/</guid>
     <description><![CDATA[自己总是记不住各种命令……]]></description>
-</item><item>
-    <title>解决PyCharm内置pip升级失败（另附whl包下载站）</title>
-    <link>https://yojigen.tech/23/</link>
-    <pubDate>Sat, 23 Nov 2019 13:24:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://yojigen.tech/23/</guid>
-    <description><![CDATA[在Windows上开发python总觉得有那么点別手]]></description>
 </item></channel>
 </rss>
