@@ -162,7 +162,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
     icp = ""
     # 许可协议信息 (支持 HTML 格式)
-    license = '<a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a><script data-ad-client="ca-pub-5354555217409114" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+    license = '<a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">CC BY-NC 4.0</a>'
 
   #  Section (所有文章) 页面配置
   [params.section]
@@ -214,7 +214,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
     Twitter = "mouyase"
     Instagram = ""
     Facebook = ""
-    Telegram = "mouyase"
+    Telegram = "yojigen_channel"
     Medium = ""
     Gitlab = ""
     Youtubelegacy = ""
@@ -442,6 +442,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
         # 位于 "assets/"
         # 或者
         # someJavascript = "https://cdn.example.com/some.js"
+        someJavascript = '<script data-ad-client="ca-pub-5354555217409114" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
     #  SEO config
     [params.page.seo]
       # 出版者信息
@@ -490,7 +491,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
       # 是否匿名化用户 IP
       anonymizeIP = true
       # 是否使用 cookie
-      cookie = false
+      cookie = true
     # Fathom Analytics
     [params.analytics.fathom]
       id = ""
