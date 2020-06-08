@@ -150,7 +150,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
   [params.footer]
     enable = true
     #  自定义内容 (支持 HTML 格式)
-    custom = '<a href="https://www.mokeyjay.com">超能小紫</a> | <a href="https://www.himiku.com/">初之音</a>'
+    custom = '<a href="https://www.mokeyjay.com">超能小紫</a> | <a href="https://www.himiku.com/">初之音</a><script data-ad-client="ca-pub-5354555217409114" async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
     #  是否显示 Hugo 和主题信息
     hugo = true
     #  是否显示版权信息
