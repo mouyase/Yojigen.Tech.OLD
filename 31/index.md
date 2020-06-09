@@ -5,8 +5,8 @@
 Cover: [桜 - マシマサキ@Pixiv](https://www.pixiv.net/artworks/80518034)
 
 {{< admonition warning >}}
-最新更新，UCloud云计算团队于2020年5月19日发布产品变更通知。
-{{< image src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/31/3.jpg" caption="可选择的加速区" >}}
+最新更新，UCloud云计算团队于2020年5月19日发布产品变更通知，今后只有UCloud旗下的服务器可以使用这个功能了。
+{{< image src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/31/3.jpg" caption="GlobalSSH产品变更通知" >}}
 {{< /admonition >}}
 
 ## 官方介绍
