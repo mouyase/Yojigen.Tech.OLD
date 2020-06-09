@@ -4,6 +4,11 @@
 
 Cover: [桜 - マシマサキ@Pixiv](https://www.pixiv.net/artworks/80518034)
 
+{{< admonition warning >}}
+最新更新，UCloud云计算团队于2020年5月19日发布产品变更通知。
+{{< image src="https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/assets/31/3.jpg" caption="可选择的加速区" >}}
+{{< /admonition >}}
+
 ## 官方介绍
 >GlobalSSH是一款致力于提高跨国远程管理服务器效率的产品，旨在解决因为跨国网络不稳定，通过远程管理服务器时，经常会出现卡顿、连接失败、传输速度较慢等现象。运维研发人员在使用本产品后，可以提高，极大程度的减少卡顿、连接失败的情况发生，提高运维工作的效率。
 >注：本产品同样适用于Windows服务器的远程登陆服务
