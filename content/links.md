@@ -20,3 +20,4 @@ featuredImagePreview: ""
 | ![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/links/feng.moe.jpg) | 烧饼的博客 | [https://feng.moe](https://feng.moe) |
 | ![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/links/0xfe.com.cn.jpg) | 0xFE | [https://0xfe.com.cn](https://0xfe.com.cn) |
 | ![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/links/bili33.top.jpg) | GamerNoTitle | [https://bili33.top](https://bili33.top) |
+| ![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/links/www.justhx.com.jpg) | 惶心博客 | [https://www.justhx.com](https://www.justhx.com) |
