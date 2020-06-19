@@ -194,7 +194,7 @@ copyright = "署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-S
       # 主页显示头像的 URL
       avatarURL = "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@master/static/images/avatar.jpg"
       # 主页显示的网站副标题
-      subtitle = "四次元里包含着二次元和三次元"
+      subtitle = "有关二次元、三次元、科技以及一切"
       # 是否为副标题显示打字机动画
       typeit = true
       # 是否显示社交账号
