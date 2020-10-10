@@ -1,0 +1,19 @@
+{
+  "name": "yojigen.tech",
+  "version": "1.0.0",
+  "author": "mouyase",
+  "scripts": {
+    "yarn_dev": "yarn run dev",
+    "yarn_build": "yarn run build",
+    "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
+  },
+  "devDependencies": {
+    "vuepress": "^1.5.4",
+    "vuepress-theme-reco": "^1.5.7"
+  },
+  "dependencies": {
+    "vue-class-component": "^7.2.3"
+  },
+  "description": "aa"
+}
