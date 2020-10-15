@@ -7,7 +7,7 @@ module.exports = {
         if (NODE_ENV === 'production') {
             return {
                 output: {
-                    publicPath: '~public/'
+                    publicPath: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/'
                 },
                 resolve: {
                     alias: {
