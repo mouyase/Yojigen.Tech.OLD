@@ -35,15 +35,13 @@ module.exports = {
     dest: "public",
     head: [
         [
-            "link",
-            {
+            "link", {
                 "rel": "icon",
                 "href": "/favicon.ico"
             }
         ],
         [
-            "meta",
-            {
+            "meta", {
                 name: "viewport",
                 content: "width=device-width,initial-scale=1,user-scalable=no"
             }
@@ -56,8 +54,7 @@ module.exports = {
                 text: "首页",
                 link: "/",
                 icon: "reco-home"
-            },
-            {
+            }, {
                 text: "时间线",
                 link: "/page/timeline/",
                 icon: "reco-date"
@@ -73,6 +70,14 @@ module.exports = {
             //     ]
             // },
             {
+                text: "项目",
+                icon: "reco-message",
+                items: [{
+                    text: "PivisionM",
+                    link: "/project/pivisionm",
+                    icon: "reco-github"
+                }]
+            }, {
                 text: "联系方式",
                 icon: "reco-message",
                 items: [{
@@ -102,60 +107,51 @@ module.exports = {
             }
         },
         friendLink: [{
-                title: "超能小紫",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://www.mokeyjay.com"
-            },
-            {
-                title: "Kevan's Blog",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://www.qqstop.cn"
-            },
-            {
-                title: "ACG喵",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://acgmiao.com"
-            },
-            {
-                title: "TypeBlog",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://typeblog.net"
-            },
-            {
-                title: "初之音",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://www.himiku.com"
-            },
-            {
-                title: "烧饼的博客",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://feng.moe"
-            },
-            {
-                title: "GamerNoTitle",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://bili33.top"
-            },
-            {
-                title: "0xFE",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "https://0xfe.com.cn"
-            },
-            {
-                title: "惶心博客",
-                desc: "Enjoy when you can, and endure when you must.",
-                email: "1156743527@qq.com",
-                link: "[https://www.justhx.com"
-            },
-        ],
+            title: "超能小紫",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://www.mokeyjay.com"
+        }, {
+            title: "Kevan's Blog",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://www.qqstop.cn"
+        }, {
+            title: "ACG喵",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://acgmiao.com"
+        }, {
+            title: "TypeBlog",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://typeblog.net"
+        }, {
+            title: "初之音",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://www.himiku.com"
+        }, {
+            title: "烧饼的博客",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://feng.moe"
+        }, {
+            title: "GamerNoTitle",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://bili33.top"
+        }, {
+            title: "0xFE",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "https://0xfe.com.cn"
+        }, {
+            title: "惶心博客",
+            desc: "Enjoy when you can, and endure when you must.",
+            email: "1156743527@qq.com",
+            link: "[https://www.justhx.com"
+        }, ],
         logo: "/images/logo.jpg",
         search: true,
         searchMaxSuggestions: 10,
