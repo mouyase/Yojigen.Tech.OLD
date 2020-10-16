@@ -11,7 +11,7 @@ module.exports = {
                 },
                 resolve: {
                     alias: {
-                        'public': path.resolve(__dirname, './public')
+                        public: path.resolve(__dirname, './public')
                     }
                 }
             }
@@ -19,7 +19,7 @@ module.exports = {
             return {
                 resolve: {
                     alias: {
-                        'public': path.resolve(__dirname, './public')
+                        public: path.resolve(__dirname, './public')
                     }
                 }
             }
@@ -49,6 +49,7 @@ module.exports = {
     ],
     theme: "reco",
     themeConfig: {
+        subSidebar: 'auto',
         noFoundPageByTencent: false,
         nav: [{
                 text: "首页",
