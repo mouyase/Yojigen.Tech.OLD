@@ -74,7 +74,7 @@ module.exports = {
                 icon: "reco-message",
                 items: [{
                     text: "PivisionM",
-                    link: "/project/pivisionm",
+                    link: "/project/pivisionm/",
                     icon: "reco-github"
                 }]
             }, {
