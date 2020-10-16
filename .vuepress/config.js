@@ -59,7 +59,7 @@ module.exports = {
             },
             {
                 text: "时间线",
-                link: "/timeline/",
+                link: "/page/timeline/",
                 icon: "reco-date"
             },
             // {
