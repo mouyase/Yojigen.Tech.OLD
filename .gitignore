@@ -129,5 +129,5 @@ dist
 .pnp.*
 
 # Custom
-public
-.idea
+/public
+/.idea
