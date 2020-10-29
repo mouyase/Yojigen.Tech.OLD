@@ -52,41 +52,46 @@ module.exports = {
         subSidebar: 'auto',
         noFoundPageByTencent: false,
         nav: [{
-                text: "首页",
-                link: "/",
-                icon: "reco-home"
-            }, {
-                text: "时间线",
-                link: "/page/timeline/",
-                icon: "reco-date"
+            text: "首页",
+            link: "/",
+            icon: "reco-home"
+        }, {
+            text: "时间线",
+            link: "/page/timeline/",
+            icon: "reco-date"
+        },
+        // {
+        //     text: "文档",
+        //     icon: "reco-message",
+        //     "items": [
+        //         {
+        //             text: "vuepress-reco",
+        //             link: "/docs/theme-reco/"
+        //         }
+        //     ]
+        // },
+        {
+            text: "项目",
+            icon: "reco-message",
+            items: [{
+                text: "pixivM",
+                link: "/project/pixivM/",
+                icon: "reco-github"
             },
-            // {
-            //     text: "文档",
-            //     icon: "reco-message",
-            //     "items": [
-            //         {
-            //             text: "vuepress-reco",
-            //             link: "/docs/theme-reco/"
-            //         }
-            //     ]
-            // },
             {
-                text: "项目",
-                icon: "reco-message",
-                items: [{
-                    text: "PivisionM",
-                    link: "/project/pivisionm/",
-                    icon: "reco-github"
-                }]
-            }, {
-                text: "联系方式",
-                icon: "reco-message",
-                items: [{
-                    text: "GitHub",
-                    link: "https://github.com/mouyase",
-                    icon: "reco-github"
-                }]
-            }
+                text: "PivisionM",
+                link: "/project/pivisionm/",
+                icon: "reco-github"
+            }]
+        }, {
+            text: "联系方式",
+            icon: "reco-message",
+            items: [{
+                text: "GitHub",
+                link: "https://github.com/mouyase",
+                icon: "reco-github"
+            }]
+        }
         ],
         sidebar: {
             "/docs/theme-reco/": [
@@ -152,7 +157,7 @@ module.exports = {
             desc: "Enjoy when you can, and endure when you must.",
             email: "1156743527@qq.com",
             link: "[https://www.justhx.com"
-        }, ],
+        },],
         logo: "/images/logo.jpg",
         search: true,
         searchMaxSuggestions: 10,
