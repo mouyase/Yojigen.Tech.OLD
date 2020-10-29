@@ -49,8 +49,6 @@ module.exports = {
     ],
     theme: "reco",
     themeConfig: {
-        subSidebar: 'auto',
-        noFoundPageByTencent: false,
         nav: [{
             text: "首页",
             link: "/",
@@ -115,49 +113,53 @@ module.exports = {
         friendLink: [{
             title: "超能小紫",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.mokeyjay.com.jpg",
             link: "https://www.mokeyjay.com"
         }, {
             title: "Kevan's Blog",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.qqstop.cn.jpg",
             link: "https://www.qqstop.cn"
         }, {
             title: "ACG喵",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/acgmiao.com.jpg",
             link: "https://acgmiao.com"
         }, {
             title: "TypeBlog",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/typeblog.net.jpg",
             link: "https://typeblog.net"
         }, {
             title: "初之音",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.himiku.com.jpg",
             link: "https://www.himiku.com"
         }, {
             title: "烧饼的博客",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/feng.moe.jpg",
             link: "https://feng.moe"
         }, {
             title: "GamerNoTitle",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/bili33.top.jpg",
             link: "https://bili33.top"
         }, {
             title: "0xFE",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/0xfe.com.cn.jpg",
             link: "https://0xfe.com.cn"
         }, {
             title: "惶心博客",
             desc: "Enjoy when you can, and endure when you must.",
-            email: "1156743527@qq.com",
-            link: "[https://www.justhx.com"
+            logo: "https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.justhx.com.jpg",
+            link: "https://www.justhx.com"
         },],
+        valineConfig: {
+            appId: 'IDj1oJAL4ncR6jrRQKz9LmOo-gzGzoHsz',
+            appKey: '4wEsRbR1WtSisee2kjkjugUE',
+        },
         logo: "/images/logo.jpg",
         search: true,
         searchMaxSuggestions: 10,
@@ -165,6 +167,8 @@ module.exports = {
         author: "某亚瑟",
         authorAvatar: "/images/avatar.jpg",
         record: "四次元科技",
+        subSidebar: 'auto',
+        noFoundPageByTencent: false,
         startYear: "2015"
     },
     markdown: {
