@@ -73,12 +73,12 @@ module.exports = {
             icon: 'reco-message',
             items: [{
                 text: 'pixivM',
-                link: '/project/pixivm/',
+                link: '/project/pixivM/',
                 icon: 'reco-github'
             },
             {
                 text: 'PivisionM',
-                link: '/project/pivisionm/',
+                link: '/project/pivisionM/',
                 icon: 'reco-github'
             }]
         }, {
