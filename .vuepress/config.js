@@ -73,7 +73,7 @@ module.exports = {
             icon: 'reco-message',
             items: [{
                 text: 'pixivM',
-                link: '/project/pixivM/',
+                link: '/project/pixivm/',
                 icon: 'reco-github'
             },
             {
