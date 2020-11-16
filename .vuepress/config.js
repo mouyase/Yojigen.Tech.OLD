@@ -1,30 +1,12 @@
 const path = require('path')
+const configureWebpack = require('./configs/configureWebpack')
+const nav = require('./configs/nav')
+const sidebar = require('./configs/sidebar')
+const friendLink = require('./configs/friendLink')
 
 module.exports = {
     port: 62000,
-    configureWebpack: () => {
-        const NODE_ENV = process.env.NODE_ENV
-        if (NODE_ENV === 'production') {
-            return {
-                output: {
-                    publicPath: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/'
-                },
-                resolve: {
-                    alias: {
-                        public: path.resolve(__dirname, './public')
-                    }
-                }
-            }
-        } else {
-            return {
-                resolve: {
-                    alias: {
-                        public: path.resolve(__dirname, './public')
-                    }
-                }
-            }
-        }
-    },
+    configureWebpack,
     locales: {
         '/': {
             lang: 'zh-CN'
@@ -49,56 +31,8 @@ module.exports = {
     ],
     theme: 'reco',
     themeConfig: {
-        nav: [{
-            text: '首页',
-            link: '/',
-            icon: 'reco-home'
-        }, {
-            text: '时间线',
-            link: '/page/timeline/',
-            icon: 'reco-date'
-        },
-        // {
-        //     text: '文档',
-        //     icon: 'reco-message',
-        //     'items': [
-        //         {
-        //             text: 'vuepress-reco',
-        //             link: '/docs/theme-reco/'
-        //         }
-        //     ]
-        // },
-        {
-            text: '项目',
-            icon: 'reco-message',
-            items: [{
-                text: 'pixivM',
-                link: '/project/pixivM/',
-                icon: 'reco-github'
-            },
-            {
-                text: 'PivisionM',
-                link: '/project/pivisionM/',
-                icon: 'reco-github'
-            }]
-        }, {
-            text: '联系方式',
-            icon: 'reco-message',
-            items: [{
-                text: 'GitHub',
-                link: 'https://github.com/mouyase',
-                icon: 'reco-github'
-            }]
-        }
-        ],
-        sidebar: {
-            '/docs/theme-reco/': [
-                '',
-                'theme',
-                'plugin',
-                'api'
-            ]
-        },
+        nav,
+        sidebar,
         type: 'blog',
         blogConfig: {
             category: {
@@ -110,61 +44,7 @@ module.exports = {
                 text: '标签'
             }
         },
-        friendLink: [{
-            title: '超能小紫',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.mokeyjay.com.jpg',
-            link: 'https://www.mokeyjay.com'
-        },
-        {
-            title: 'Kevan\'s Blog',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.qqstop.cn.jpg',
-            link: 'https://www.qqstop.cn'
-        },
-        {
-            title: 'ACG喵',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/acgmiao.com.jpg',
-            link: 'https://acgmiao.com'
-        },
-        {
-            title: 'TypeBlog',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/typeblog.net.jpg',
-            link: 'https://typeblog.net'
-        },
-        {
-            title: '初之音',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.himiku.com.jpg',
-            link: 'https://www.himiku.com'
-        },
-        {
-            title: '烧饼的博客',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/feng.moe.jpg',
-            link: 'https://feng.moe'
-        },
-        {
-            title: 'GamerNoTitle',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/bili33.top.jpg',
-            link: 'https://bili33.top'
-        },
-        {
-            title: '0xFE',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/0xfe.com.cn.jpg',
-            link: 'https://0xfe.com.cn'
-        },
-        {
-            title: '惶心博客',
-            desc: 'Enjoy when you can, and endure when you must.',
-            logo: 'https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/links/www.justhx.com.jpg',
-            link: 'https://www.justhx.com'
-        },
-        ],
+        friendLink,
         valineConfig: {
             appId: 'IDj1oJAL4ncR6jrRQKz9LmOo-gzGzoHsz',
             appKey: '4wEsRbR1WtSisee2kjkjugUE',
