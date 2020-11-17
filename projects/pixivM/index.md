@@ -23,3 +23,20 @@ Telegram【Pixiv研究协会】: [@PixivGroup](https://t.me/PixivGroup)
  - 本地会员，无广告
  - 解锁高级搜索
  - 解锁热度排序
+ - 支持ID搜图
+
+## 更新日志
+
+### 2020-10-27
+
+ - 初版发布
+
+### 2020-11-17
+
+ - 使用新版的高级搜索API（远程更新）
+
+## 赏杯咖啡
+
+|支付宝|微信|
+|:-:|:-:|
+|![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/qr_alipay.jpg)|![](https://cdn.jsdelivr.net/gh/mouyase/Yojigen.Tech@gh-pages/images/qr_wechat.jpg)|

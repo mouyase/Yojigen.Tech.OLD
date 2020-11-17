@@ -5,7 +5,8 @@ module.exports = {
             title: 'API',
             collapsable: true,
             children: [
-                'apis/trending-tags'
+                'apis/trending-tags',
+                'apis/auth'
             ]
         },
     ]
