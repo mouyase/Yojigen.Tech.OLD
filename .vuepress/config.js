@@ -1,4 +1,3 @@
-const path = require('path')
 const configureWebpack = require('./configs/configureWebpack')
 const nav = require('./configs/nav')
 const sidebar = require('./configs/sidebar')
