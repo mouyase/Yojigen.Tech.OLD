@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "author": "mouyase",
   "scripts": {
-    "yarn_dev": "yarn run dev",
-    "yarn_build": "yarn run build",
     "dev": "vuepress dev . --open --host \"localhost\"",
     "build": "vuepress build ."
   },
