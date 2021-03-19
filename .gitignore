@@ -13,5 +13,6 @@
 *.html.gz
 *.bmp
 *.md
-wp-admin/
+wp-admin
 wp-content/cache
+wp-content/upgrade
