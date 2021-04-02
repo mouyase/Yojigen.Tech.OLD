@@ -1834,3 +1834,48 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+/*Modify*/
+.entry-content code:not(.hljs), .comment-content code:not(.hljs) {
+	background: lightgray;
+	margin: 0px 4px;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+.entry-content blockquote, .comment-content blockquote {
+	margin-left: 0;
+	padding: 0px;
+	padding-left: 1em;
+	border-left: 4px solid #ddd;
+}
+.entry-content a, .comment-content a {
+	margin: 0px 4px;
+	color: blue;
+}
+.entry-content a:link, .comment-content a:link {
+	margin: 0px 4px;
+	color: blue;
+}
+.entry-content a:visited, .comment-content a:visited {
+	margin: 0px 4px;
+	color: blue;
+}
+.more-link {
+	margin: 0px 0px!important;
+}
+.more-link:link {
+	margin: 0px 0px!important;
+}
+.more-link:visited {
+	margin: 0px 0px!important;
+}
+.entry-content h2, .comment-content h2 {
+	font-size: 18px!important;
+	margin-left: 0;
+	padding: 0px;
+	padding-left: 0.5em;
+	border-left: 8px solid #0088d0;
+	background: #eeeeee;
+}
+.widget-title{
+	font-size: 18px!important;
+}

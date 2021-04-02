@@ -15,7 +15,7 @@ form table.form-table th a, form table.form-table td a{text-decoration: none;}
 div.wpjam-media-buttons{display: inline-block; float:none;}
 
 div.sub-field{margin-bottom: 10px;}
-label.sub-field-label{display: table-cell; min-width:80px; font-weight:600; vertical-align: top; height: 28px; line-height: 28px; margin: 2px 0;}
+label.sub-field-label{display: table-cell; min-width:80px; font-weight:600; height: 28px; line-height: 28px; margin: 2px 0;}
 div.sub-field-detail{display: inline-block; vertical-align: middle; min-height: 28px; line-height: 28px;}
 label.sub-field-label + div.sub-field-detail{display: table-cell;}
 
