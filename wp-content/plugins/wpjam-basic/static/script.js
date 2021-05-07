@@ -67,12 +67,12 @@ jQuery(function($){
 
 				if(args.bulk){
 					$.each(args.ids, function(index, id){
-						var tr_id	= $.wpjam_list_table_tr_id(id);
+						let tr_id	= $.wpjam_list_table_tr_id(id);
 						$(item_prefix+tr_id+' .check-column input').after('<span class="spinner is-active"></span>').hide();
 					});
 				}else{
 					if(args.id){
-						var tr_id	= $.wpjam_list_table_tr_id(args.id);
+						let tr_id	= $.wpjam_list_table_tr_id(args.id);
 						$(item_prefix+tr_id+' .check-column input').after('<span class="spinner is-active"></span>').hide();
 					}
 				}
@@ -81,7 +81,7 @@ jQuery(function($){
 			}
 
 			$.post(ajaxurl, args, function(data, status){
-				var response	= (typeof data == 'object') ? data : JSON.parse(data);
+				let response	= (typeof data == 'object') ? data : JSON.parse(data);
 
 				if(list_action_type == 'submit'){
 					$('input#list-table-submit').prop('disabled', false);
@@ -91,13 +91,13 @@ jQuery(function($){
 
 					if(args.bulk){
 						$.each(args.ids, function(index, id){
-							var tr_id	= $.wpjam_list_table_tr_id(id);
+							let tr_id	= $.wpjam_list_table_tr_id(id);
 							$(item_prefix+tr_id+' .check-column input').show();
 							$(item_prefix+tr_id+' .check-column .spinner').remove();
 						});
 					}else{
 						if(args.id){
-							var tr_id	= $.wpjam_list_table_tr_id(args.id);
+							let tr_id	= $.wpjam_list_table_tr_id(args.id);
 
 							$(item_prefix+tr_id+' .check-column input').show();
 							$(item_prefix+tr_id+' .check-column .spinner').remove();
@@ -179,19 +179,7 @@ jQuery(function($){
 						}else if(response_type == 'list'){
 							$('div.list-table').html(response.data);
 						}else if(response_type == 'add' || response_type == 'duplicate'){
-							if(response.data){
-								if(response.last){
-									$('.wp-list-table > tbody tr').last().after(response.data);
-									$('.wp-list-table > tbody tr').last().hide().css('background-color','#ffffee').fadeIn(400);
-
-									$(document).scrollTop($('.wp-list-table > tbody tr').last().offset().top-100);
-								}else{
-									$('.wp-list-table > tbody tr').first().before(response.data);
-									$('.wp-list-table > tbody tr').first().hide().css('background-color','#ffffee').fadeIn(400);
-								}
-
-								$('.no-items').remove();
-							}
+							$.wpjam_list_table_create_item(response);
 						}else if(response_type == 'up' || response_type == 'down'){
 							tr_id	= $.wpjam_list_table_tr_id(args.id);
 
@@ -202,14 +190,14 @@ jQuery(function($){
 								tr_prev	= $.wpjam_list_table_tr_id(args.prev);
 								$(item_prefix+tr_id).insertAfter(item_prefix+tr_prev);
 							}
-							$.wpjam_list_table_update_item(args.id, '', '#eeffff');
+							$.wpjam_list_table_update_item(response, '#eeffff');
 							$.wpjam_list_table_sortable_init();
 						}else if(response_type == 'move'){
-							$.wpjam_list_table_update_item(args.id, response.data, '#eeffee');
+							$.wpjam_list_table_update_item(response, '#eeffee');
 							$('.wp-list-table > tbody').sortable('enable');
 							$.wpjam_list_table_sortable_init();
 						}else if(response_type == 'delete'){
-							$.wpjam_list_table_delete_item(args);
+							$.wpjam_list_table_delete_item(response);
 						}else if(response_type == 'redirect'){
 							if(response.url){
 								window.location.href	= response.url;
@@ -217,22 +205,14 @@ jQuery(function($){
 								window.location.reload();
 							}
 						}else{
-							if(args.bulk){
-								var bg_color	= '#ffffdd';
-								$.each(response.data, function(id, item){
-									bg_color 	= bg_color == '#ffffdd' ? '#ffffee' : '#ffffdd';
-									$.wpjam_list_table_update_item(id, item, bg_color);
-								});
-							}else{
-								$.wpjam_list_table_update_item(args.id, response.data);
-							}
+							$.wpjam_list_table_update_item(response);
 						}
 
 						// if(response.errmsg && $.inArray(response_type, ['append', 'up', 'down', 'move']) == -1){
 						// 	$('.list-table-notice').removeClass('notice-error').addClass('notice-success').html('<p>'+response.errmsg+'</p>').fadeIn(400);
 						// }
 					}else if(list_action_type == 'submit'){
-						$(".spinner").removeClass('is-active');
+						$('.spinner').removeClass('is-active');
 
 						if(response_type == 'append'){
 							var scrollto = $('#TB_ajaxContent')[0].scrollHeight;
@@ -244,7 +224,7 @@ jQuery(function($){
 
 							$('.list-table-notice').wpjam_notice(response.errmsg, 'success');
 
-							$.wpjam_list_table_delete_item(args);
+							$.wpjam_list_table_delete_item(response);
 						}else if(response_type == 'redirect'){
 							if(response.url){
 								window.location.href	= response.url;
@@ -261,28 +241,9 @@ jQuery(function($){
 							}else if(response_type == 'form'){
 								// 
 							}else if(response_type == 'add' || response_type == 'duplicate'){
-								if(response.data){
-									if(response.last){
-										$('.wp-list-table > tbody tr').last().after(response.data);
-										$('.wp-list-table > tbody tr').last().hide().css('background-color','#ffffee').fadeIn(400);
-										$(document).scrollTop($('.wp-list-table tbody tr').last().offset().top);
-									}else{
-										$('.wp-list-table > tbody tr').first().before(response.data);
-										$('.wp-list-table > tbody tr').first().hide().css('background-color','#ffffee').fadeIn(400);
-									}
-
-									$('.no-items').remove();
-								}
+								$.wpjam_list_table_create_item(response);
 							}else{
-								if(args.bulk){
-									var bg_color	= '#ffffdd';
-									$.each(response.data, function(id, item){
-										bg_color 	= bg_color == '#ffffdd' ? '#ffffee' : '#ffffdd';
-										$.wpjam_list_table_update_item(id, item, bg_color);
-									});
-								}else{
-									$.wpjam_list_table_update_item(args.id, response.data);
-								}
+								$.wpjam_list_table_update_item(response);
 							}
 
 							if(response.errmsg){
@@ -325,34 +286,74 @@ jQuery(function($){
 			return false;
 		},
 
-		wpjam_list_table_update_item: function(id, item, bg_color){
-			if(id){
-				var item_prefix	= wpjam_page_setting.item_prefix;
+		wpjam_list_table_create_item: function(response){
+			if(response.data){
+				if(response.layout == 'calendar'){
+					$.wpjam_list_table_update_calendar_date(response, '#ffffee');
+				}else{
+					if(response.last){
+						$('.wp-list-table > tbody tr').last().after(response.data);
+						$('.wp-list-table > tbody tr').last().hide().css('background-color','#ffffee').fadeIn(400);
 
-				tr_id	= $.wpjam_list_table_tr_id(id);
+						$(document).scrollTop($('.wp-list-table > tbody tr').last().offset().top-100);
+					}else{
+						$('.wp-list-table > tbody tr').first().before(response.data);
+						$('.wp-list-table > tbody tr').first().hide().css('background-color','#ffffee').fadeIn(400);
+					}
 
-				if(item){
-					$(item_prefix+tr_id).last().after('<span class="edit-'+tr_id+'"></span>');
-					$(item_prefix+tr_id).remove();
-					$('.edit-'+tr_id).before(item).remove();
+					$('.no-items').remove();
 				}
-
-				bg_color	= bg_color || '#ffffee';
-
-				$(item_prefix+tr_id).hide().css('background-color', bg_color).fadeIn(400);
 			}
 		},
 
-		wpjam_list_table_delete_item: function(args){
-			var item_prefix	= wpjam_page_setting.item_prefix;
-			if(args.bulk){
-				$.each(args.ids, function(index, id){
-					tr_id	= $.wpjam_list_table_tr_id(id);
-					$(item_prefix+tr_id).css('background-color', 'red').fadeOut(400, function(){ $(this).remove();});
-				});
+		wpjam_list_table_update_item: function(response, bg_color){
+			bg_color	= bg_color || '#ffffee';
+
+			if(response.layout == 'calendar'){
+				$.wpjam_list_table_update_calendar_date(response, bg_color);
 			}else{
-				tr_id	= $.wpjam_list_table_tr_id(args.id);
-				$(item_prefix+tr_id).css('background-color', 'red').fadeOut(400, function(){ $(this).remove();});
+				if(response.bulk){
+					$.each(response.data, function(id, item){
+						bg_color 	= bg_color == '#ffffdd' ? '#ffffee' : '#ffffdd';
+						$.wpjam_list_table_update_item({id: id, data: item, bulk: false}, bg_color);
+					});
+				}else{
+					if(response.id){
+						let tr_id	= $.wpjam_list_table_tr_id(response.id);
+						let prefix	= wpjam_page_setting.item_prefix;
+
+						if(response.data){
+							$(prefix+tr_id).last().after('<span class="edit-'+tr_id+'"></span>');
+							$(prefix+tr_id).remove();
+							$('.edit-'+tr_id).before(response.data).remove();
+						}
+
+						$(prefix+tr_id).hide().css('background-color', bg_color).fadeIn(400);
+					}
+				}
+			}
+		},
+
+		wpjam_list_table_update_calendar_date(response, bg_color){
+			$.each(response.data, function(date, item){
+				bg_color 	= bg_color == '#ffffdd' ? '#ffffee' : '#ffffdd';
+				$('td#date_'+date).html(item).css('background-color', bg_color);
+			});
+		},
+
+		wpjam_list_table_delete_item: function(response){
+			if(response.layout == 'calendar'){
+				$.wpjam_list_table_update_calendar_date(response, '#ffffee');
+			}else{
+				if(response.bulk){
+					$.each(response.ids, function(index, id){
+						$.wpjam_list_table_delete_item({id: id, bulk: false});
+					});
+				}else{
+					let prefix	= wpjam_page_setting.item_prefix;
+					let tr_id	= $.wpjam_list_table_tr_id(response.id);
+					$(prefix+tr_id).css('background-color', 'red').fadeOut(400, function(){ $(this).remove();});
+				}
 			}
 		},
 

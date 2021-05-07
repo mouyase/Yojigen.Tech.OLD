@@ -13,6 +13,7 @@
 *.html.gz
 *.bmp
 *.md
+*.DS_Store
 wp-admin
 wp-content/cache
 wp-content/upgrade

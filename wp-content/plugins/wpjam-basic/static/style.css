@@ -101,6 +101,36 @@ table.wp-list-table tbody tr:first-child:nth-last-child(2) ~ tr .move{display: n
 .wp-picker-container input[type=text].wp-color-picker{margin:0 2px;}
 .wp-picker-container .wp-picker-clear{min-height:30px;}
 
+.list-table.layout-calendar .tablenav.top{text-align: center;}
+table#wpjam_calendar{width:100%; margin:20px 0;}
+table#wpjam_calendar caption{font-size:x-large; padding:30px 0;}
+table#wpjam_calendar a{text-decoration: none;}
+table#wpjam_calendar thead th,
+table#wpjam_calendar tfoot th{font-size:larger; font-weight: bold;}
+table#wpjam_calendar tbody td,
+table#wpjam_calendar thead th,
+table#wpjam_calendar tfoot th{border-right:1px solid #c3c4c7; border-bottom:1px solid #c3c4c7;}
+table#wpjam_calendar tbody td:last-child,
+table#wpjam_calendar thead th:last-child,
+table#wpjam_calendar tfoot th:last-child{border-right:none;}
+table#wpjam_calendar tbody tr:last-child td,
+table#wpjam_calendar tfoot tr:last-child th{border-bottom:none;}
+table#wpjam_calendar tbody td.weekend,
+table#wpjam_calendar thead th.weekend,
+table#wpjam_calendar tfoot th.weekend{background: #f6f7f7;}
+
+table#wpjam_calendar tbody td .date-meta{min-height: 24px;}
+table#wpjam_calendar tbody td span.day{display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center;}
+table#wpjam_calendar tbody td span.day.today{color:#fff; border-radius: 10px;  background: red; }
+
+table#wpjam_calendar tbody td a.list-table-action{display: none;}
+table#wpjam_calendar tbody td:hover a.list-table-action{display: inline;}
+
+table#wpjam_calendar tfoot td{padding-top: 40px;}
+table#wpjam_calendar tfoot td a{font-size:20px;}
+table#wpjam_calendar tfoot td#next a{float: right;}
+
+
 #TB_window #TB_title {height: 40px;}
 #TB_window #TB_title #TB_ajaxWindowTitle{line-height: 40px; font-size:1.3em; padding-left:20px;}
 #TB_window #TB_title #TB_closeWindowButton{left: auto;right: -30px;color: #eee;}
