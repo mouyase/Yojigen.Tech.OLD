@@ -72,8 +72,6 @@ jQuery(function($){
 					$(this).find('.show-if-key').wpjam_show_if();
 				});
 			});
-
-			tb_position();
 		},
 
 		wpjam_autocomplete: function(){
@@ -119,12 +117,26 @@ jQuery(function($){
 					select: function(event, ui){
 						$(this).after('<span class="wpjam-query-title"><span class="dashicons dashicons-dismiss"></span>'+ui.item.label+'</span>');
 						$(this).addClass('hidden');
+						$('body').trigger('wpjam_autocomplete_selected', ui.item, $(this));
 					}
 				}).focus(function(){
 					if(this.value == ''){
 						$(this).autocomplete('search');
 					}
 				});
+			});
+		},
+
+		wpjam_editor: function(){
+			this.each(function(){
+				if(wp.editor){
+					let id	= $(this).attr('id');
+
+					wp.editor.remove(id);
+					wp.editor.initialize(id, $(this).data('settings'));
+				}else{
+					alert('请在页面加载 add_action(\'admin_footer\', \'wp_enqueue_editor\');');
+				}
 			});
 		},
 
@@ -241,8 +253,6 @@ jQuery(function($){
 				return 0 - Math.round($(this).width()/2);
 			});
 
-			// $('.sortable').disableSelection();
-
 			$('.tabs').wpjam_tabs();
 			$('.show-if-key').wpjam_show_if();
 			$('.wpjam-autocomplete').wpjam_autocomplete();
@@ -251,7 +261,7 @@ jQuery(function($){
 
 			$('input[type="range"]').change();
 
-			// $('.type-date').datepicker();
+			$('textarea.wpjam-editor').wpjam_editor();
 		}
 	});
 
@@ -285,7 +295,7 @@ jQuery(function($){
 		});
 	});
 
-	var del_item = '<a href="javascript:;" class="button del-item">删除</a> <span class="dashicons dashicons-menu"></span>';
+	var del_item = '<a href="javascript:;" class="button wpjam-del-item">删除</a> <span class="dashicons dashicons-menu"></span>';
 
 	var custom_uploader;
 	if (custom_uploader) {
@@ -434,7 +444,7 @@ jQuery(function($){
 	});
 
 	//  删除图片
-	$('body').on('click', '.del-img', function(){
+	$('body').on('click', '.wpjam-del-img', function(){
 
 		$(this).parent().prev('input').val('');
 		$(this).prev('img').fadeOut(300, function(){
@@ -495,7 +505,7 @@ jQuery(function($){
 	});
 
 	//  删除选项
-	$('body').on('click', '.del-item', function(){
+	$('body').on('click', '.wpjam-del-item', function(){
 		let next_input	= $(this).parent().next('input');
 		if(next_input.length > 0){
 			next_input.val('');

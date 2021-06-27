@@ -34,7 +34,7 @@ div.mu-img{position: relative; margin: 10px 20px 10px 0; width:100px; height: 10
 div.wpjam-mu-img, div.wpjam-img{position: relative; cursor:pointer; text-decoration: none;}
 div.mu-img img, div.wpjam-img img{display: block;}
 
-a.del-item.dashicons-no-alt, a.del-img.dashicons-no-alt{position: absolute; font-size: 20px; top: -10px; right: -10px; color:#ffffff; background: #cc3333; border-radius: 10px; text-decoration: none; opacity: 0.8;}
+a.del-item-icon{position: absolute; font-size: 20px; top: -10px; right: -10px; color:#ffffff; background: #cc3333; border-radius: 10px; text-decoration: none; opacity: 0.8;}
 
 div.mu-item span.wpjam-query-title{width: 240px; margin:0 2px 4px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 span.wpjam-query-title{vertical-align: top; display: inline-block; cursor: default;padding: 4px 8px 4px 4px; background: #e5e5e5; border-radius: 4px; height: 20px; line-height: 20px;}
@@ -130,8 +130,8 @@ table#wpjam_calendar tfoot td{padding-top: 40px;}
 table#wpjam_calendar tfoot td a{font-size:20px;}
 table#wpjam_calendar tfoot td#next a{float: right;}
 
-
-#TB_window #TB_title {height: 40px;}
+.abscenter{left: 50%; top: 50%; transform: translate(-50%, -50%);}
+#TB_window #TB_title{height: 40px;}
 #TB_window #TB_title #TB_ajaxWindowTitle{line-height: 40px; font-size:1.3em; padding-left:20px;}
 #TB_window #TB_title #TB_closeWindowButton{left: auto;right: -30px;color: #eee;}
 
@@ -142,6 +142,7 @@ table#wpjam_calendar tfoot td#next a{float: right;}
 #TB_window #TB_ajaxContent .form-table th{width: 18%; min-width: 80px;}
 #TB_window #TB_ajaxContent img{max-width: 100%; height:auto;}
 #TB_window #TB_ajaxContent div.notice{margin: 5px 0px 2px;}
+#TB_window img#TB_Image{margin:15px 15px 5px 15px;}
 
 #TB_caption a{text-decoration: none;}
 
@@ -154,6 +155,10 @@ html.TB_iframe #wpbody-content {padding-bottom: 10px;}
 
 .ui-autocomplete {z-index: 1000000 !important;} /*要超过 TB z-index 才行，不然弹窗不行*/
 
+#wpjam_iframe_wrap{position: fixed; bottom: 6px; right: 8px; background: #fff; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); z-index: 1000000; width: 300px; height: 500px;}
+#wpjam_iframe{width:100%; height: 100%;}
+#wpjam_iframe_close{font-size: 20px; position: absolute; width: 20px; height: 20px; border-radius: 10px; top: -6px; right: -6px; font-weight: 300; color: #fff;  background: #666; cursor: pointer;}
+
 @media screen and (max-width: 830px){ 
 	#TB_window #TB_title #TB_closeWindowButton{right: 0; top: -30px; } 
 	#TB_window #TB_ajaxContent .form-table th{width: inherit;}
@@ -165,6 +170,7 @@ html.TB_iframe #wpbody-content {padding-bottom: 10px;}
 	div.mu-item input[type=text], div.mu-item input[type=url]{width: calc(100% - 140px) !important; display: inline-block !important;}
 	div.mu-fields > div.mu-item > a{margin: 0px 0 10px 0px; }
 	input[type=text]{height:40px;}
+	input.hidden{display: none !important;}
 }
 
 /* Smartphone */
