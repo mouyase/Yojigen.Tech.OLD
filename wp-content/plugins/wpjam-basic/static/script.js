@@ -812,11 +812,14 @@ jQuery(function($){
 	});
 
 	window.tb_position	= function(){
-		if($('#TB_window').length && $('#TB_ajaxContent').length){
+		if($('#TB_window').length && ($('#TB_ajaxContent').length || $('#TB_iframeContent').length)){
 			let W	= Math.min(TB_WIDTH, 720, $(window).width()-20);
 			let H	= Math.min(900, $(window).height()-120);
 
-			$('#TB_ajaxContent').css({width : W-50, height: '', maxHeight : H});
+			if($('#TB_ajaxContent').length){
+				$('#TB_ajaxContent').css({width: W-50, height: '', maxHeight: H});
+			}
+
 			$('#TB_window').addClass('abscenter').css({width : W});
 
 			$('#TB_overlay').off('click');
