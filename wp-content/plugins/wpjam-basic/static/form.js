@@ -530,3 +530,23 @@ function isset(obj){
 		return false;
 	}
 }
+
+function wpjam_iframe(src, args){
+	args	= args || {};
+
+	if(jQuery('#wpjam_iframe').length == 0){
+		let close_btn = jQuery("<div id='wpjam_iframe_close' class='dashicons dashicons-no-alt'></div>");
+					
+		close_btn.on('click', function(e){
+			e.preventDefault();
+			jQuery('#wpjam_iframe_wrap').remove();
+		});
+
+		jQuery("body").append("<div id='wpjam_iframe_wrap'><iframe id='wpjam_iframe' src='"+src+"' id='wpjam_iframe'>你的浏览器不支持 iframe。</iframe></div>");
+		jQuery('#wpjam_iframe_wrap').prepend(close_btn);
+	}else{
+		jQuery('#wpjam_iframe').prop('src', src);
+	}
+
+	jQuery('#wpjam_iframe_wrap').css(args);
+}
