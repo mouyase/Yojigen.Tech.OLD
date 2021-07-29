@@ -18,11 +18,17 @@ jQuery(function($){
 				if($('#TB_ajaxContent #'+notice_id).length < 1){
 					$('#TB_ajaxContent').prepend('<div id="'+notice_id+'" class="notice is-dismissible hidden"></div>');
 				}
+
+				$('#TB_ajaxContent').scrollTop(0);
 			}else{
 				notice_id	='wpjam_notice';
 
 				if($('#'+notice_id).length < 1){
 					$('hr.wp-header-end').after('<div id="'+notice_id+'" class="notice is-dismissible inline hidden"></div>');
+				}
+
+				if($('.wp-heading-inline').offset().top < $(window).scrollTop()){
+					$('html, body').animate({scrollTop: 0}, 800);
 				}
 			}
 
@@ -37,7 +43,7 @@ jQuery(function($){
 						return;
 					}
 
-					let button = $('<button type="button" class="notice-dismiss"><span class="screen-reader-text">忽略此提示。</span></button>' );
+					let button = $('<button type="button" class="notice-dismiss"><span class="screen-reader-text">忽略此提示。</span></button>');
 					
 					button.on('click.wp-dismiss-notice', function(e){
 						e.preventDefault();
@@ -624,12 +630,6 @@ jQuery(function($){
 							}else{
 								$.wpjam_notice(args.page_title+'成功', 'success');
 							}
-
-							if($('#TB_ajaxContent').length > 0){
-								$('#TB_ajaxContent').scrollTop(0);
-							}else if($('.wp-heading-inline').offset().top < $(window).scrollTop()){
-								$('html, body').animate({scrollTop: 0}, 800);
-							}
 						}
 
 						if(response.done == 0){
@@ -699,10 +699,6 @@ jQuery(function($){
 						.submit();
 					}else{
 						$.wpjam_notice(response.errmsg, 'success');
-
-						if($('.wp-heading-inline').offset().top < $(window).scrollTop()){
-							$('html, body').animate({scrollTop: 0}, 800);
-						}
 					}
 				}
 			});

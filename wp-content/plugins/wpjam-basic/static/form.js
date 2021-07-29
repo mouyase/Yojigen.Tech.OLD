@@ -295,6 +295,12 @@ jQuery(function($){
 		});
 	});
 
+	$('body').on('click', '.wpjam-modal', function(e){
+		e.preventDefault();
+
+		wpjam_modal($(this).prop('href'));
+	});
+
 	var del_item = '<a href="javascript:;" class="button wpjam-del-item">删除</a> <span class="dashicons dashicons-menu"></span>';
 
 	var custom_uploader;
@@ -531,22 +537,50 @@ function isset(obj){
 	}
 }
 
-function wpjam_iframe(src, args){
-	args	= args || {};
+function wpjam_modal(src, type, css){
+	type	= type || 'img';
 
-	if(jQuery('#wpjam_iframe').length == 0){
-		let close_btn = jQuery("<div id='wpjam_iframe_close' class='dashicons dashicons-no-alt'></div>");
-					
-		close_btn.on('click', function(e){
+	if(jQuery('#wpjam_modal_wrap').length == 0){
+		jQuery('body').append('<div id="wpjam_modal_wrap" class="hidden"><div id="wpjam_modal"></div></div>');
+		jQuery("<a id='wpjam_modal_close' class='dashicons dashicons-no-alt del-item-icon'></a>")
+		.on('click', function(e){
 			e.preventDefault();
-			jQuery('#wpjam_iframe_wrap').remove();
-		});
-
-		jQuery("body").append("<div id='wpjam_iframe_wrap'><iframe id='wpjam_iframe' src='"+src+"' id='wpjam_iframe'>你的浏览器不支持 iframe。</iframe></div>");
-		jQuery('#wpjam_iframe_wrap').prepend(close_btn);
-	}else{
-		jQuery('#wpjam_iframe').prop('src', src);
+			jQuery('#wpjam_modal_wrap').remove();
+		})
+		.prependTo('#wpjam_modal_wrap');
 	}
 
-	jQuery('#wpjam_iframe_wrap').css(args);
+	if(type == 'iframe'){
+		css	= css || {};
+		css = jQuery.extend({}, {width:'300px', height:'500px'}, css);
+
+		jQuery('#wpjam_modal').html('<iframe style="width:100%; height: 100%;" src='+src+'>你的浏览器不支持 iframe。</iframe>');
+		jQuery('#wpjam_modal_wrap').css(css).removeClass('hidden');
+	}else if(type == 'img'){
+		let img_preloader	= new Image();
+		let img_tag			= '';
+
+		img_preloader.onload	= function(){
+			img_preloader.onload	= null;
+
+			let width	= img_preloader.width/2;
+			let height	= img_preloader.height/2;
+
+			if(width > 400 || height > 500){
+				let radio	= (width / height >= 400 / 500) ? (400 / width) : (500 / height);
+				
+				width	= width * radio;
+				height	= height * radio;
+			}
+
+			jQuery('#wpjam_modal').html('<img src="'+src+'" width="'+width+'" height="'+height+'" />');
+			jQuery('#wpjam_modal_wrap').css({width:width+'px', height:height+'px'}).removeClass('hidden');
+		}
+
+		img_preloader.src	= src;
+	}
+}
+
+function wpjam_iframe(src, css){
+	wpjam_modal(src, 'iframe', css);
 }

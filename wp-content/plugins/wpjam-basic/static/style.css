@@ -49,7 +49,7 @@ div.wpjam-mu-img{box-sizing:border-box; color: #ccc; background: #f7f7f7; border
 div.wpjam-mu-img.dashicons:before{line-height: 100px; font-size: 32px; font-weight: 100;}
 div.wpjam-mu-img, div.wpjam-img{position: relative; cursor:pointer; text-decoration: none;}
 
-a.del-item-icon{position: absolute; font-size: 20px; top: -10px; right: -10px; border-radius: 10px; color:#ffffff; background: #cc3333; text-decoration: none; opacity: 0.8;}
+a.del-item-icon{position: absolute; font-size: 20px; top: -10px; right: -10px; border-radius: 10px; color:#ffffff; background: #cc3333; text-decoration: none; opacity: 0.8;cursor: pointer;}
 
 div.mu-item span.wpjam-query-title{width: 240px; margin:0 2px 4px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 span.wpjam-query-title{vertical-align: top; display: inline-block; cursor: default;padding: 4px 8px 4px 4px; background: #e5e5e5; border-radius: 4px; height: 20px; line-height: 20px;}
@@ -178,9 +178,7 @@ div.news-items div.small:last-child span.news-item-title{border-bottom: 0;}
 div.news-items div.small span.item-thumb{width: 60px; height: 60px; overflow: hidden;}
 div.news-items div.small span.item-thumb img{position: relative; left : 50%; top : 50%; transform: translate(-50%, -50%);}
 
-#wpjam_iframe_wrap{position: fixed; bottom: 6px; right: 8px; background: #fff; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); z-index: 1000000; width: 300px; height: 500px;}
-#wpjam_iframe{width:100%; height: 100%;}
-#wpjam_iframe_close{font-size: 20px; position: absolute; width: 20px; height: 20px; border-radius: 10px; top: -6px; right: -6px; font-weight: 300; color: #fff;  background: #666; cursor: pointer;}
+#wpjam_modal_wrap{position: fixed; bottom: 8px; right: 10px; background: #fff; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); z-index: 1000000;}
 
 @media screen and (max-width: 830px){ 
 	#TB_window #TB_title #TB_closeWindowButton{right: 0; top: -30px; } 
