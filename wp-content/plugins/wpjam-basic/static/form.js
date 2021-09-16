@@ -62,11 +62,22 @@ jQuery(function($){
 
 				$('.show-if-'+show_if_key).each(function(){
 					if($.wpjam_compare(show_if_val, $(this).data('show_if').compare, $(this).data('show_if').value)){
-						$(this).find(':input').prop('disabled', false);
 						$(this).removeClass('hidden');
+
+						if($(this).is('option')){
+							$(this).prop('disabled', false);
+						}else{
+							$(this).find(':input').prop('disabled', false);
+						}
 					}else{
-						$(this).find(':input').prop('disabled', true);
 						$(this).addClass('hidden');
+
+						if($(this).is('option')){
+							$(this).prop('disabled', true);
+							$(this).prop('selected', false);
+						}else{
+							$(this).find(':input').prop('disabled', true);	
+						}
 					}
 
 					$(this).find('.show-if-key').wpjam_show_if();
